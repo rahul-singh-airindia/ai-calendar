@@ -4,7 +4,7 @@ import { CalendarService } from './calendar.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
   @Output() viewChange = new EventEmitter<'month' | 'week' | 'day'>();
