@@ -1,13 +1,12 @@
 <div class="header">
     <div class="nav-buttons">
-      <button class="nav-button" (click)="prev()">Prev</button>
-      <button class="nav-button" (click)="next()">Next</button>
-     
+      <button class="nav-button" (click)="prev()">	&lt;</button>
+      <button class="nav-button" (click)="next()">	&gt;</button>
     </div>
     <div class="month-year">{{ currentDate | date: 'MMMM yyyy' }}</div>
     <div class="view-tabs">
-      <button class="view-tab-button" (click)="changeView('month')" [class.active]="view === 'month'">Month</button>
-      <button class="view-tab-button" (click)="changeView('week')" [class.active]="view === 'week'">Week</button>
-      <button class="view-tab-button" (click)="changeView('day')" [class.active]="view === 'day'">Day</button>
+      <!-- <button class="view-tab-button" (click)="changeView('month')" [class.active]="view === 'month'">Month</button> -->
+      <!-- <button class="view-tab-button" (click)="changeView('week')" [class.active]="view === 'week'">Week</button>
+      <button class="view-tab-button" (click)="changeView('day')" [class.active]="view === 'day'">Day</button> -->
     </div>
   </div>
