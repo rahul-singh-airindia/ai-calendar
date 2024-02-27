@@ -1,0 +1,9 @@
+<app-header (viewChange)="onViewChange($event)"
+(navigation)="onNavigation($event)"
+></app-header>
+
+<div class="content">
+  <app-month   *ngIf="currentView === 'month'"></app-month>
+  <app-week *ngIf="currentView === 'week'"></app-week>
+  <app-day *ngIf="currentView === 'day'"></app-day>
+</div>
