@@ -1,0 +1,43 @@
+.btn {
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.btn-primary {
+  color: #531251;
+  background-color: #eae2e9;
+}
+
+.bg-transparent {
+  background: transparent;
+}
+
+.btn-primary.active,
+.btn-primary:hover {
+  color: #ffffff;
+  background-color: #531251;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+.header-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-sm);
+}
+
+.toolbar-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.toolbar-chunk {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}

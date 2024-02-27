@@ -1,0 +1,69 @@
+<div class="header-toolbar">
+  <div class="toolbar-chunk">
+    <div class="btn-group">
+      <button
+        class="btn btn-primary bg-transparent rounded"
+        type="button"
+        title="Previous day"
+        aria-pressed="false"
+        style="padding: 5px 12px 5px 5px"
+        (click)="handlePreviousMonth()"
+      >
+        <span class="icon" role="img"> &#x2329; </span>
+      </button>
+
+      <button
+        class="btn btn-primary bg-transparent rounded"
+        type="button"
+        title="Next day"
+        aria-pressed="false"
+        style="padding: 5px 5px 5px 12px"
+        (click)="handleNextMonth()"
+      >
+        <span class="icon" role="img"> &#x232A; </span>
+      </button>
+    </div>
+
+    <div class="toolbar-title">
+      {{
+        currentDate.toLocaleDateString("en-US", {
+          month: "long",
+          year: "numeric"
+        })
+      }}
+    </div>
+  </div>
+
+  <!-- <div class="toolbar-chunk">
+    <div class="button-group">
+      <button
+        class="btn btn-primary active"
+        type="button"
+        title="day view"
+        aria-pressed="false"
+        style="border-radius: 8px 0 0 8px"
+      >
+        day
+      </button>
+
+      <button
+        class="btn btn-primary"
+        type="button"
+        title="week view"
+        aria-pressed="false"
+      >
+        week
+      </button>
+
+      <button
+        class="btn btn-primary"
+        type="button"
+        title="month view"
+        aria-pressed="false"
+        style="border-radius: 0 8px 8px 0"
+      >
+        month
+      </button>
+    </div>
+  </div> -->
+</div>
