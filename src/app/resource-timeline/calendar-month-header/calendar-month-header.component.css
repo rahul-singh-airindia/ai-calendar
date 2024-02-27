@@ -1,0 +1,49 @@
+.calendar-header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 53px;
+  padding: 8px;
+  border: 1px solid var(--stroke-subtle);
+  color: var(--text-subtle);
+  cursor: pointer;
+}
+
+.date {
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.035px;
+}
+
+.day {
+  text-align: center;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: 0.04px;
+}
+
+.cell.today {
+  font-weight: bold !important;
+}
+
+.cell:hover {
+  background-color: var(--ai-grey-100);
+}
+
+.cell.active {
+  color: #ffffff;
+  background-color: var(--ai-purple-800);
+  pointer-events: none;
+}

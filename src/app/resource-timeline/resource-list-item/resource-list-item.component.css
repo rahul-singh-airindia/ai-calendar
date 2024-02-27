@@ -1,0 +1,36 @@
+.item-container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 34px;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid;
+  border-radius: 2px;
+  cursor: pointer;
+  opacity: 0.65;
+}
+
+.item-name {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.collapse-icon {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.hidden {
+  cursor: auto;
+  visibility: hidden;
+}
