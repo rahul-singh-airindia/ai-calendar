@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Day } from '../interface/day.model';
+import { TeamAbsence } from '../interface/team-absence/team-absence.interface';
 import { ResourceData } from '../interface/team-absence/resource-data.interface';
 import { TeamLeaveHolidayData } from '../interface/team-absence/team-leave-holiday.interface';
 
@@ -13,9 +14,10 @@ export class ResourceTimelineComponent implements OnInit {
   width: string = '';
   @Input('height')
   height: string = '';
-  @Input('resourceData')
+  @Input('teamAbsence')
+  teamAbsence: TeamAbsence = {} as TeamAbsence;
+
   resourceData: ResourceData[] = [];
-  @Input('teamLeavesHolidayData')
   teamLeavesHolidayData: TeamLeaveHolidayData[] = [];
 
   currentDate: Date = new Date();
@@ -25,6 +27,8 @@ export class ResourceTimelineComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    this.resourceData = this.teamAbsence.data.resourceData;
+    this.teamLeavesHolidayData = this.teamAbsence.data.teamLeavesHolidayData;
     this.generateCalendar(this.currentDate);
   }
 

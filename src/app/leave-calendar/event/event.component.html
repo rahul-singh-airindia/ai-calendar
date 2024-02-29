@@ -1,0 +1,4 @@
+<div class="event-block" [class.pending]="data.status === 'pending'" [class.approved]="data.status === 'approved'" [class.all-day]="data.status === 'all day'">
+    <div class="title" [style.color]="getTitleColor(data.status)">{{data.type}}</div>
+    <div class="description">{{data.status}}</div>
+</div>
