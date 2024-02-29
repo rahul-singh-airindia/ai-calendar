@@ -1,0 +1,408 @@
+{
+  "status": {
+    "code": 200,
+    "message": "SUCCESS",
+    "status": null,
+    "errors": null
+  },
+  "data": {
+    "resourceData": [
+      {
+        "id": "80054758",
+        "title": "CC Test",
+        "userType": "DR"
+      },
+      {
+        "id": "80054748",
+        "title": "MYAI Test3",
+        "userType": "DR"
+      },
+      {
+        "id": "80054747",
+        "title": "MYAI Test7",
+        "userType": "PR"
+      },
+      {
+        "id": "80054751",
+        "title": "MYAI Test8",
+        "userType": "DR"
+      },
+      {
+        "id": "80054749",
+        "title": "MYAI Test4",
+        "userType": "DR"
+      }
+    ],
+    "teamLeavesHolidayData": [
+      {
+        "resourceIds": ["80054747", "80054747"],
+        "title": "Holiday",
+        "start": "2022-02-04",
+        "end": "2022-02-04",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Gudi Padwa",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054751", "80054747", "80054747"],
+        "title": "Holiday",
+        "start": "2022-08-15",
+        "end": "2022-08-15",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Independence Day",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751"],
+        "title": "Holiday",
+        "start": "2023-09-07",
+        "end": "2023-09-07",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Janmashtmi",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054747"],
+        "title": "Holiday",
+        "start": "2022-03-18",
+        "end": "2022-03-18",
+        "extendedProps": {
+          "holidayLeaveName": "Holi",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054747", "80054747"],
+        "title": "Holiday",
+        "start": "2022-08-16",
+        "end": "2022-08-16",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Parsi New Year",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751"],
+        "title": "Holiday",
+        "start": "2022-03-01",
+        "end": "2022-03-01",
+        "extendedProps": {
+          "holidayLeaveName": "IND_MAHASHIV",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751"],
+        "title": "Holiday",
+        "start": "2023-08-30",
+        "end": "2023-08-30",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Raksha Bandhan",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054747"],
+        "title": "Holiday",
+        "start": "2022-08-09",
+        "end": "2022-08-09",
+        "extendedProps": {
+          "holidayLeaveName": "IND_MUHARRAM",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751"],
+        "title": "Holiday",
+        "start": "2022-10-24",
+        "end": "2022-10-24",
+        "extendedProps": {
+          "holidayLeaveName": "IND_DIWALI",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054751", "80054747", "80054747"],
+        "title": "Holiday",
+        "start": "2022-10-05",
+        "end": "2022-10-05",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Dussera",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054747"],
+        "title": "Holiday",
+        "start": "2023-01-26",
+        "end": "2023-01-26",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Republic Day",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054747"],
+        "title": "Holiday",
+        "start": "2024-01-01",
+        "end": "2024-01-01",
+        "extendedProps": {
+          "holidayLeaveName": "IND_NEW YEAR",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751"],
+        "title": "Holiday",
+        "start": "2023-11-15",
+        "end": "2023-11-15",
+        "extendedProps": {
+          "holidayLeaveName": "BhaiDooj",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054747", "80054747"],
+        "title": "Holiday",
+        "start": "2023-11-12",
+        "end": "2023-11-12",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Deepawali",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054751", "80054747", "80054747"],
+        "title": "Holiday",
+        "start": "2022-10-02",
+        "end": "2022-10-02",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Mahatama Gandhi birthday",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054751", "80054747", "80054747"],
+        "title": "Holiday",
+        "start": "2022-04-15",
+        "end": "2022-04-15",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Good Friday",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054747"],
+        "title": "Holiday",
+        "start": "2022-01-26",
+        "end": "2022-01-26",
+        "extendedProps": {
+          "holidayLeaveName": "IND_REPUBLICDAY",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054751", "80054747", "80054747"],
+        "title": "Holiday",
+        "start": "2022-12-25",
+        "end": "2022-12-25",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Christmas Day",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054751"],
+        "title": "Holiday",
+        "start": "2022-05-16",
+        "end": "2022-05-16",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Budha Purnima",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054751", "80054747"],
+        "title": "Holiday",
+        "start": "2022-03-18",
+        "end": "2022-03-18",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Holi",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054751", "80054747"],
+        "title": "Holiday",
+        "start": "2022-11-08",
+        "end": "2022-11-08",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Guru Nanak Birthday",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054747"],
+        "title": "Holiday",
+        "start": "2023-09-19",
+        "end": "2023-09-19",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Ganesh Chaturthi",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054747"],
+        "title": "Holiday",
+        "start": "2023-04-22",
+        "end": "2023-04-22",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Idul Fitr Ramzan Eid",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054747", "80054747"],
+        "title": "Holiday",
+        "start": "2022-05-01",
+        "end": "2022-05-01",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Maharashtra Day",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054747"],
+        "title": "Holiday",
+        "start": "2023-04-14",
+        "end": "2023-04-14",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Ambedkar Jayanti",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054751"],
+        "title": "Holiday",
+        "start": "2022-07-10",
+        "end": "2022-07-10",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Bakrid Eidul Azha",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054751", "80054747"],
+        "title": "Holiday",
+        "start": "2022-04-14",
+        "end": "2022-04-14",
+        "extendedProps": {
+          "holidayLeaveName": "IND_Mahavir Jayanti",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054751", "80054747"],
+        "title": "Holiday",
+        "start": "2022-05-03",
+        "end": "2022-05-03",
+        "extendedProps": {
+          "holidayLeaveName": "IND_RAMZAN",
+          "duration": "1"
+        }
+      },
+      {
+        "resourceIds": ["80054747"],
+        "title": "Leave",
+        "start": "2024-02-27",
+        "end": "2024-02-27",
+        "extendedProps": {
+          "holidayLeaveName": "Sick Leave",
+          "duration": "1",
+          "status": "PENDING"
+        }
+      },
+      {
+        "resourceIds": ["80054747"],
+        "title": "Leave",
+        "start": "2024-02-26",
+        "end": "2024-02-26",
+        "extendedProps": {
+          "holidayLeaveName": "Sick Leave",
+          "duration": "1",
+          "status": "PENDING"
+        }
+      },
+      {
+        "resourceIds": ["80054747"],
+        "title": "Leave",
+        "start": "2024-02-16",
+        "end": "2024-02-17",
+        "extendedProps": {
+          "holidayLeaveName": "Relocation Leave - Temporary Domestic Relocation",
+          "duration": "2",
+          "status": "PENDING"
+        }
+      },
+      {
+        "resourceIds": ["80054747"],
+        "title": "Leave",
+        "start": "2024-03-14",
+        "end": "2024-03-15",
+        "extendedProps": {
+          "holidayLeaveName": "Casual Leave",
+          "duration": "2",
+          "status": "APPROVED"
+        }
+      },
+      {
+        "resourceIds": ["80054747"],
+        "title": "Leave",
+        "start": "2024-02-15",
+        "end": "2024-02-15",
+        "extendedProps": {
+          "holidayLeaveName": "Relocation Leave - Temporary Domestic Relocation",
+          "duration": "1",
+          "status": "PENDING"
+        }
+      },
+      {
+        "resourceIds": ["80054747"],
+        "title": "Leave",
+        "start": "2024-02-03",
+        "end": "2024-02-05",
+        "extendedProps": {
+          "holidayLeaveName": "Relocation Leave - Temporary Domestic Relocation",
+          "duration": "3",
+          "status": "PENDING"
+        }
+      },
+      {
+        "resourceIds": ["80054747"],
+        "title": "Leave",
+        "start": "2024-02-22",
+        "end": "2024-02-22",
+        "extendedProps": {
+          "holidayLeaveName": "Privilege Leave",
+          "duration": "1",
+          "status": "APPROVED"
+        }
+      },
+      {
+        "resourceIds": ["80054751"],
+        "title": "Leave",
+        "start": "2024-02-15",
+        "end": "2024-02-15",
+        "extendedProps": {
+          "holidayLeaveName": "Sick Leave",
+          "duration": "1",
+          "status": "APPROVED"
+        }
+      }
+    ],
+    "totalRecords": 5
+  }
+}

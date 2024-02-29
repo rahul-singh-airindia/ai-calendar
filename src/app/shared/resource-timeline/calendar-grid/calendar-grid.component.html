@@ -1,0 +1,10 @@
+<div class="row" *ngFor="let resource of resourceData">
+  <resource-timiline-calendar-cell
+    class="cell"
+    *ngFor="let day of days"
+    [ngClass]="{ faded: [0, 6].includes(day.date.getDay()) }"
+    [date]="day.date"
+    [resource]="resource"
+    [dateEventMap]="dateEventMap"
+  ></resource-timiline-calendar-cell>
+</div>

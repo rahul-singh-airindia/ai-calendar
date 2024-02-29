@@ -1,0 +1,20 @@
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 48px;
+  position: relative;
+  max-width: 48px;
+  height: 64px;
+  padding: 8px;
+  border-top: 1px solid #f0f1f7;
+  border-right: 1px solid #f0f1f7;
+  color: #595b6b;
+}

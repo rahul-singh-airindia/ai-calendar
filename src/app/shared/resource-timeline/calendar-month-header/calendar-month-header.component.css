@@ -1,0 +1,50 @@
+.month-header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.day {
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 48px;
+  height: 53px;
+  padding: 8px;
+  border-right: 1px solid #ffffff;
+  border-radius: 8px 8px 0 0;
+  color: #595b6b;
+}
+
+.day-date {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.035px;
+}
+
+.day-name {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.04px;
+}
+
+.day.today {
+  font-weight: bold !important;
+}
+
+.day.active {
+  background-color: #531251;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.faded {
+  background-color: #f7f8fa;
+}

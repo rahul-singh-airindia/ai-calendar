@@ -1,0 +1,16 @@
+<div class="list-container">
+  <div class="list-padding"></div>
+
+  <resource-timeline-resource-list-item
+    *ngFor="let resource of resourceData"
+    [resource]="resource"
+    data-[isCollapsible]="hasResources(resource)"
+  >
+    <!-- <div *ngIf="hasResources(resource)">
+      <resource-timeline-resource-list-item
+        *ngFor="let particiant of resource.particiants"
+        [itemName]="room"
+      ></resource-timeline-resource-list-item>
+    </div> -->
+  </resource-timeline-resource-list-item>
+</div>

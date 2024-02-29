@@ -1,7 +1,0 @@
-<div class="list-container">
-  <app-resource-list-item *ngFor="let item of lists" [itemName]="item.name" [isCollapsible]="hasNestedItems(item)">
-    <div *ngIf="hasNestedItems(item)">
-      <app-resource-list-item *ngFor="let itm of item.item" [itemName]="itm.name"></app-resource-list-item>
-    </div>
-  </app-resource-list-item>
-</div>

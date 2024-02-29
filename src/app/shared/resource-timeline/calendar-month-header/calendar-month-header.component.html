@@ -1,0 +1,20 @@
+<div class="month-header">
+  <div
+    class="day"
+    [ngClass]="{
+      today: day.isToday,
+      active: day.isSelected,
+      faded: [0, 6].includes(day.date.getDay())
+    }"
+    *ngFor="let day of getCurrentMonthDays()"
+    (click)="handleSelectDay(day)"
+  >
+    <span class="day-date">
+      {{ day.date.getDate() }}
+    </span>
+
+    <span class="day-name">
+      {{ day.date.toLocaleDateString("en-US", { weekday: "short" }) }}
+    </span>
+  </div>
+</div>
