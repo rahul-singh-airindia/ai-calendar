@@ -12,7 +12,12 @@ export class MonthComponent implements OnInit {
   daysInMonth: number = 0;
   firstDayOfWeek: number = 0;
   emptyDays: any[] = [];
-  days: { value: number; monthType: string }[] = [];
+  dummyData = [
+    { eventDate: '12-2-2024', type: 'sick-leave', status: 'pending' },
+    { eventDate: '22-2-2024', type: 'casual-leave', status: 'approved' },
+    { eventDate: '2-2-2024', type: 'national-holiday', status: 'all day' },
+  ];
+  days: {type:string, value: number; monthType: string }[] = [];
 
   constructor(public calenderService: CalendarService) {}
 
@@ -26,7 +31,7 @@ export class MonthComponent implements OnInit {
     this.monthName = this.getMonthName(date);
     this.daysInMonth = this.getDaysInMonth(date);
     this.firstDayOfWeek = this.getFirstDayOfWeek(date);
-    this.generateDays();
+    this.generateDays(date);
   }
 
   private getMonthName(date: Date): string {
@@ -43,7 +48,7 @@ export class MonthComponent implements OnInit {
     return firstDayOfMonth.getDay();
   }
 
-  private generateDays(): void {
+  private generateDays(date: Date): void {
     this.days = [];
 
     // Calculate the number of days from the previous month to display
@@ -64,17 +69,60 @@ export class MonthComponent implements OnInit {
     );
     for (let i = daysFromPrevMonth; i > 0; i--) {
       const day = prevMonthDate.getDate() - i + 1;
-      this.days.push({ value: day, monthType: 'prev' });
+      this.days.push({type:'undefined', value: day, monthType: 'prev' });
     }
 
     // Populate the days array with the dates from the current month
-    for (let i = 1; i <= this.daysInMonth; i++) {
-      this.days.push({ value: i, monthType: 'current' });
-    }
+    // for (let i = 1; i <= this.daysInMonth; i++) {
+    this.days.push(...this.getDatesInMonth(date));
+    // }
 
     // Populate the days array with the numbers from the next month
     for (let i = 1; i <= daysFromNextMonth; i++) {
-      this.days.push({ value: i, monthType: 'next' });
+      this.days.push({type:'undefined', value: i, monthType: 'next' });
     }
   }
+
+  getDatesInMonth(
+    date: Date
+  ): {type:string, date: string; value: number; monthType: string }[] {
+    const year = date.getFullYear();
+    const month = date.getMonth(); 
+    // Get the number of days in the specified month
+    const numberOfDaysInMonth = new Date(year, month + 1, 0).getDate();
+
+    // Create an array to store the dates
+    const datesInMonth: {type:string, date: string; value: number; monthType: string; }[] = [];
+
+    // Iterate over each day of the month and add it to the array
+    for (let day = 1; day <= numberOfDaysInMonth; day++) {
+      let eventFound = false;
+      this.dummyData.map((data,index)=>{
+        if(data.eventDate === `${day}-${month}-${year}`){
+          eventFound = true;
+          datesInMonth.push({
+            // date: new Date(year, month, day),
+            date: `${day}-${month}-${year}`,
+            value: day,
+            monthType: 'current',
+            ...data,
+          });
+        }
+      })
+
+      if(!eventFound){
+        datesInMonth.push({
+          // date: new Date(year, month, day),
+          date: `${day}-${month}-${year}`,
+          value: day,
+          monthType: 'current',
+          type:'undefined'
+        });
+      }
+      
+    }
+
+    return datesInMonth;
+  }
+
 }

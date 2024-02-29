@@ -1,0 +1,40 @@
+.event-block {
+  display: flex;
+  padding: var(--padding-sm, 8px) var(--padding-default, 16px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--space-100, 8px);
+  align-self: stretch;
+  border-radius: var(--radius-none, 0px) var(--Small-Button-Border-Radius, 8px)
+    var(--Small-Button-Border-Radius, 8px) var(--radius-none, 0px);
+  border-left: 5px solid;
+  margin-top: 15px;
+  height: 60px;
+}
+
+.title {
+  text-align: center;
+  font-family: "Nunito Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%;
+  text-transform: capitalize;
+}
+
+/* Set border color based on data.status */
+.event-block.pending {
+  border-color: #ff8c00;
+  background-color: #ffefdb;
+}
+
+.event-block.approved {
+  border-color: #17732b;
+  background-color: #e5ffec;
+}
+
+.event-block.all-day {
+  border-color: #952391;
+  background-color: #9523911a;
+}
