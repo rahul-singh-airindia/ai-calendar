@@ -3,6 +3,21 @@
   overflow: hidden;
   width: 100%;
 }
+.current-date .date-text {
+  background-color: #531251;
+  color: #fff;
+  border-radius: 50%;
+  padding: 1px 3px 1px 3px;
+}
+.prev-month {
+  background-color: #fbfbfc;
+}
+.next-month {
+  background-color: #fbfbfc;
+}
+.current-month {
+  background: var(--Surface-Surface-Default, #fff);
+}
 
 .week-header {
   display: flex;
@@ -36,7 +51,7 @@
   text-align: left;
   padding: 10px;
   border: 1px solid var(--Stroke-Stroke-Subtle, #f0f1f7);
-  background: var(--Surface-Surface-Default, #fff);
+  /* background: var(--Surface-Surface-Default, #fff); */
 }
 
 .date-text {

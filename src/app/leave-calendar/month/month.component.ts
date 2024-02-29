@@ -17,7 +17,7 @@ export class MonthComponent implements OnInit {
     { eventDate: '22-2-2024', type: 'casual-leave', status: 'approved' },
     { eventDate: '2-2-2024', type: 'national-holiday', status: 'all day' },
   ];
-  days: {type:string, value: number; monthType: string }[] = [];
+  days: {type:string, value: number; monthType: string}[] = [];
 
   constructor(public calenderService: CalendarService) {}
 
@@ -26,6 +26,10 @@ export class MonthComponent implements OnInit {
       this.updateMonth(data);
     });
   }
+  isCurrentDate(day: any){
+    const today = new Date();
+    return day.monthType === 'current' && day.value === today.getDate() && this.currentDate.getMonth() === today.getMonth() && this.currentDate.getFullYear() === today.getFullYear();
+  }
   private updateMonth(date: Date): void {
     this.currentDate = date;
     this.monthName = this.getMonthName(date);
@@ -33,6 +37,7 @@ export class MonthComponent implements OnInit {
     this.firstDayOfWeek = this.getFirstDayOfWeek(date);
     this.generateDays(date);
   }
+  
 
   private getMonthName(date: Date): string {
     return date.toLocaleString('en-US', { month: 'long' });
@@ -73,10 +78,8 @@ export class MonthComponent implements OnInit {
     }
 
     // Populate the days array with the dates from the current month
-    // for (let i = 1; i <= this.daysInMonth; i++) {
     this.days.push(...this.getDatesInMonth(date));
-    // }
-
+  
     // Populate the days array with the numbers from the next month
     for (let i = 1; i <= daysFromNextMonth; i++) {
       this.days.push({type:'undefined', value: i, monthType: 'next' });
