@@ -1,28 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CalendarGridComponent } from './resource-timeline/calendar-grid/calendar-grid.component';
-import { CalendarMonthHeaderComponent } from './resource-timeline/calendar-month-header/calendar-month-header.component';
-import { CalendarComponent } from './resource-timeline/calendar/calendar.component';
-import { ResourceListItemComponent } from './resource-timeline/resource-list-item/resource-list-item.component';
-import { ResourceListComponent } from './resource-timeline/resource-list/resource-list.component';
-import { ResourceTimelineHeaderComponent } from './resource-timeline/resource-timeline-header/resource-timeline-header.component';
-import { ResourceTimelineComponent } from './resource-timeline/resource-timeline.component';
-import { DialogBoxComponent } from './resource-timeline/dialog-box/dialog-box.component';
-import { CalendarCellComponent } from './resource-timeline/calendar-cell/calendar-cell.component';
+
+import { HolidayCalendarModule } from './holiday-calendar/holiday-calendar.module';
+import { HolidayCalendarComponent } from './holiday-calendar/holiday-calendar.component';
+import { LearningCalendarModule } from './learning-calendar/learning-calendar.module';
+import { LearningCalendarComponent } from './learning-calendar/learning-calendar.component';
+import { TeamAbsenceModule } from './team-absence/team-absence.module';
+import { TeamAbsenceComponent } from './team-absence/team-absence.component';
 
 @NgModule({
-  declarations: [
-    ResourceTimelineComponent,
-    ResourceListComponent,
-    ResourceListItemComponent,
-    CalendarComponent,
-    ResourceTimelineHeaderComponent,
-    CalendarMonthHeaderComponent,
-    CalendarGridComponent,
-    DialogBoxComponent,
-    CalendarCellComponent,
+  declarations: [],
+  exports: [
+    HolidayCalendarComponent,
+    LearningCalendarComponent,
+    TeamAbsenceComponent,
   ],
-  exports: [ResourceTimelineComponent],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    HolidayCalendarModule,
+    LearningCalendarModule,
+    TeamAbsenceModule,
+  ],
 })
 export class SharedModule {}

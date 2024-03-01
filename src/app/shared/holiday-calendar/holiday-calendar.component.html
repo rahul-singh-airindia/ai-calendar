@@ -1,0 +1,23 @@
+<div
+  style="
+        width: {{ width }};
+        height: {{ height }};
+        overflow: scroll;
+      "
+>
+  <div class="calendar-header">
+    <header-toolbar
+      [currentDate]="currentDate"
+      (previousMonth)="previousMonth()"
+      (nextMonth)="nextMonth()"
+    ></header-toolbar>
+
+    <week-header></week-header>
+  </div>
+
+  <calendar-grid
+    [days]="days"
+    [currentDate]="currentDate"
+    [dateEventMap]="dateEventMap"
+  ></calendar-grid>
+</div>

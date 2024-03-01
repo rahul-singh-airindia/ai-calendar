@@ -1,0 +1,38 @@
+.header-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  padding: 24px 24px 16px 24px;
+  background-color: #ffffff;
+}
+
+.toolbar-title {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22.5px;
+}
+
+.btn {
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  width: 32px;
+  height: 32px;
+  background-color: #f0f1f7;
+  color: #531251;
+}
+
+.btn-group {
+  display: flex;
+  gap: 8px;
+}
+
+.rounded {
+  border-radius: 50%;
+}

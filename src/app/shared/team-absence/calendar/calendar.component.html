@@ -1,0 +1,12 @@
+<div class="calendar-grid">
+  <calendar-month-header
+    [days]="days"
+    (selectDay)="handleSelectDay($event)"
+  ></calendar-month-header>
+
+  <calendar-grid
+    [days]="getDaysInCurrentMonth()"
+    [resourceData]="resourceData"
+    [dateEventMap]="dateEventMap"
+  ></calendar-grid>
+</div>

@@ -1,0 +1,34 @@
+<div
+  *ngIf="checkValidEvent(date, resource.id)"
+  class="event {{ getResourceTitle(date, resource.id).toLowerCase() }}"
+  style="width: {{
+    getResourceDuration(date, resource.id) * 48 +
+      (getResourceDuration(date, resource.id) - 2) * 10 +
+      (getResourceDuration(date, resource.id) - 1) * 7
+  }}px;"
+  (click)="toggleDialog()"
+>
+  <span class="title">
+    {{ getResourceTitle(date, resource.id) }}
+  </span>
+
+  <span class="content">
+    {{ getResourceContent(date, resource.id) }}
+  </span>
+</div>
+
+<div
+  *ngIf="getResourceEventsCount(date, resource.id) > 1"
+  class="more"
+  (click)="toggleDialog()"
+>
+  &#xFF0B;{{ getResourceEventsCount(date, resource.id) - 1 }} more
+</div>
+
+<dialog-box
+  *ngIf="checkValidEvent(date, resource.id)"
+  [date]="date"
+  [resourceEvents]="getResourceEvents(date, resource.id)"
+  [isDialogVisible]="isDialogVisible"
+  (toggleDialog)="toggleDialog()"
+></dialog-box>

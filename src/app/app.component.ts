@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import data from 'src/assets/data/team_absence.json';
+import teamAbsenceData from 'src/assets/data/team_absence.json';
+import leaveHolidayData from 'src/assets/data/holiday_calendar.json';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,6 @@ import data from 'src/assets/data/team_absence.json';
 })
 export class AppComponent {
   title = 'aiCalendar';
-  teamAbsence = data;
+  teamAbsence = teamAbsenceData;
+  leaveHoliday = leaveHolidayData;
 }
