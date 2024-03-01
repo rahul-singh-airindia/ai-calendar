@@ -1,9 +1,9 @@
 <div
-  style="
-        width: {{ width }};
-        height: {{ height }};
-        overflow: scroll;
-      "
+  [ngStyle]="{
+    width: width,
+    height: height,
+    overflow: 'scroll'
+  }"
 >
   <div class="calendar-header">
     <header-toolbar
@@ -19,5 +19,6 @@
     [days]="days"
     [currentDate]="currentDate"
     [dateEventMap]="dateEventMap"
+    (selectDay)="selectDay($event)"
   ></calendar-grid>
 </div>

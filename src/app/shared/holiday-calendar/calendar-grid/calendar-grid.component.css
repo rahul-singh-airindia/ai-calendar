@@ -17,6 +17,10 @@
   position: relative;
 }
 
+.current-month {
+  background-color: #ffffff;
+}
+
 .faded {
   background: #f0f1f7;
 }

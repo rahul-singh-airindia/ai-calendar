@@ -1,4 +1,8 @@
-.today {
+.month-date {
+  cursor: pointer;
+}
+
+.selected {
   display: flex;
   width: 24px;
   height: 24px;
@@ -21,7 +25,6 @@
   letter-spacing: 0.035px;
 }
 
-.current-month,
-.today .date {
+.selected .date {
   color: #ffffff;
 }

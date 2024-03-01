@@ -1,3 +1,13 @@
+.month-name,
+.date {
+  color: #595b6b;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.6px;
+  letter-spacing: 0.035px;
+}
+
 .today {
   display: flex;
   width: 24px;
@@ -12,16 +22,12 @@
   background: #531251;
 }
 
-.date {
-  color: #595b6b;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 19.6px;
-  letter-spacing: 0.035px;
+.date-month {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.current-month,
-.today .date {
+.date.today {
   color: #ffffff;
 }

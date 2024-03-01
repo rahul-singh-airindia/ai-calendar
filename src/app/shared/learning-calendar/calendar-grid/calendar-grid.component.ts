@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Day } from 'src/app/shared/interface/day.model';
 import { LeaveHolidayData } from '../../interface/holiday-calendar/leave-holiday.interface';
 
@@ -15,7 +15,21 @@ export class CalendarGridComponent implements OnInit {
   @Input('dateEventMap')
   dateEventMap: Map<string, LeaveHolidayData[]> = new Map();
 
+  @Output('selectDay')
+  selectDay = new EventEmitter<Day>();
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  isCurrentMonth(date: Date) {
+    return (
+      date.getMonth() === this.currentDate.getMonth() &&
+      date.getFullYear() === this.currentDate.getFullYear()
+    );
+  }
+
+  handleSelectDay(day: Day): void {
+    this.selectDay.emit(day);
+  }
 }

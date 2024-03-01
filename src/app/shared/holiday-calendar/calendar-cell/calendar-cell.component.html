@@ -1,11 +1,20 @@
 <div
   [ngClass]="{
-    today: isToday(date),
     'current-month': isCurrentMonth(date)
   }"
 >
-  <div class="date">
-    {{ date.getDate() }}
+  <div class="date-month">
+    <div class="month-name" *ngIf="date.getDate() === 1">
+      {{
+        date.toLocaleDateString("en-US", {
+          month: "short"
+        })
+      }}
+    </div>
+
+    <div class="date" [ngClass]="{ today: isToday(date) }">
+      {{ date.getDate() }}
+    </div>
   </div>
 
   <div *ngIf="getEventCount(date) > 1" class="more" (click)="toggleDialog()">

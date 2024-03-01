@@ -1,10 +1,12 @@
 <div
   class="event {{ getLeaveStatus(leaveHolidayData) }}"
-  style="width: {{
-    getEventDuration(leaveHolidayData) * 95 +
+  [ngStyle]="{
+    width:
+      getEventDuration(leaveHolidayData) * 95 +
       (getEventDuration(leaveHolidayData) - 2) * 20 +
-      (getEventDuration(leaveHolidayData) - 1) * 16
-  }}px;"
+      (getEventDuration(leaveHolidayData) - 1) * 16 +
+      'px'
+  }"
 >
   <div class="title">
     <svg

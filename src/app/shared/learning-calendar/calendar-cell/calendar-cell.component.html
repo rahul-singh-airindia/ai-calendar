@@ -1,6 +1,8 @@
 <div
+  class="month-date"
   [ngClass]="{
     today: isToday(date),
+    selected: isSelected,
     'current-month': isCurrentMonth(date)
   }"
 >
@@ -11,18 +13,4 @@
   <div *ngIf="getEventCount(date) > 1" class="more" (click)="toggleDialog()">
     +{{ getEventCount(date) - 1 }} more
   </div>
-
-  <!-- <calendar-event
-    *ngIf="getEventCount(date) > 0"
-    [leaveHolidayData]="getEvent(date)"
-    (click)="toggleDialog()"
-  ></calendar-event> -->
 </div>
-
-<!-- <dialog-box
-  *ngIf="getEventCount(date) > 0"
-  [date]="date"
-  [leaveHolidayData]="getEvents(date)"
-  [isDialogVisible]="isDialogVisible"
-  (toggleDialog)="toggleDialog()"
-></dialog-box> -->

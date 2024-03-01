@@ -18,4 +18,11 @@ export class CalendarGridComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  isCurrentMonth(date: Date) {
+    return (
+      date.getMonth() === this.currentDate.getMonth() &&
+      date.getFullYear() === this.currentDate.getFullYear()
+    );
+  }
 }

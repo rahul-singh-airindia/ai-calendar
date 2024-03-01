@@ -1,10 +1,10 @@
 <div
-  style="
-        display: flex;
-        width: {{ width }};
-        height: {{ height }};
-        overflow: scroll;
-      "
+  [ngStyle]="{
+    display: 'flex',
+    width: width,
+    height: height,
+    overflow: 'scroll'
+  }"
 >
   <div style="width: 25%">
     <resource-list [resourceData]="resourceData"></resource-list>

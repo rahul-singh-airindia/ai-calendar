@@ -13,6 +13,16 @@
   border: 1px solid #f0f1f7;
   background-color: #fbfbfc;
   position: relative;
+  cursor: pointer;
+}
+
+.day.selected {
+  cursor: auto;
+  pointer-events: none;
+}
+
+.current-month {
+  background-color: #ffffff;
 }
 
 .faded {

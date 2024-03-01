@@ -13,6 +13,8 @@ export class CalendarCellComponent implements OnInit {
   currentDate: Date = new Date();
   @Input('dateEventMap')
   dateEventMap: Map<string, LeaveHolidayData[]> = new Map();
+  @Input('selected')
+  isSelected = false;
 
   isDialogVisible = false;
 

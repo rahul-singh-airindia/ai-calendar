@@ -1,11 +1,13 @@
 <div
   *ngIf="checkValidEvent(date, resource.id)"
   class="event {{ getResourceTitle(date, resource.id).toLowerCase() }}"
-  style="width: {{
-    getResourceDuration(date, resource.id) * 48 +
+  [ngStyle]="{
+    width:
+      getResourceDuration(date, resource.id) * 48 +
       (getResourceDuration(date, resource.id) - 2) * 10 +
-      (getResourceDuration(date, resource.id) - 1) * 7
-  }}px;"
+      (getResourceDuration(date, resource.id) - 1) * 7 +
+      'px'
+  }"
   (click)="toggleDialog()"
 >
   <span class="title">

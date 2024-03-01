@@ -121,4 +121,9 @@ export class LearningCalendarComponent implements OnInit {
 
     this.generateCalendar(this.currentDate);
   }
+
+  selectDay(day: Day): void {
+    this.days.forEach((d) => (d.isSelected = false));
+    day.isSelected = !day.isSelected;
+  }
 }
