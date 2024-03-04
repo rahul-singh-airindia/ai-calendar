@@ -1,4 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { LearningCalendarData } from '../interface/learning-calendar/learning-calendar.interface';
 import { Day } from '../interface/day.model';
 
@@ -6,6 +13,7 @@ import { Day } from '../interface/day.model';
   selector: 'learning-calendar',
   templateUrl: './learning-calendar.component.html',
   styleUrls: ['./learning-calendar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LearningCalendarComponent implements OnInit {
   @Input('font-family')
@@ -26,11 +34,19 @@ export class LearningCalendarComponent implements OnInit {
   days: Day[] = [];
   dateEventMap: Map<string, LearningCalendarData[]> = new Map();
 
-  constructor() {}
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.learningCalendarData = this.learningCalendar;
     this.generateCalendar(this.currentDate);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.resource) {
+      this.learningCalendarData = changes.learningCalendar.currentValue;
+      this.generateCalendar(this.currentDate);
+      this.cdr.detectChanges();
+    }
   }
 
   generateCalendar(date: Date): void {

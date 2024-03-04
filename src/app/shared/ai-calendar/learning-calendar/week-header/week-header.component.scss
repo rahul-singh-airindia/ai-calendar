@@ -9,8 +9,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1 0 0;
     gap: styles.px2em(10px);
-    flex: 0 0 styles.px2em(34.5px);
     padding: styles.$padding-sm;
     background: map-get(styles.$surface, surface-default);
     border-bottom: 1px solid map-get(styles.$stroke, stroke-default);

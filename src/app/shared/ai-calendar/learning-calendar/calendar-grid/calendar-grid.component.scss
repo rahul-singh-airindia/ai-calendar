@@ -3,19 +3,17 @@
 .ai-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  width: fit-content;
-  height: fit-content;
 
   .ai-day {
     display: flex;
-    width: styles.px2em(20px);
-    height: styles.px2em(20px);
-    padding: 8px;
+    flex: 1 0 0;
+    aspect-ratio: 1;
+    padding: styles.$padding-sm;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #f0f1f7;
-    background-color: #fbfbfc;
+    border: 1px solid map-get(styles.$stroke, stroke-subtle);
+    background-color: map-get(styles.$global-colours, ai-grey, g50);
     position: relative;
     cursor: pointer;
   }
@@ -26,10 +24,10 @@
   pointer-events: none;
 }
 
-.ai-current-month {
-  background-color: #ffffff;
+.ai-day.ai-current-month {
+  background-color: map-get(styles.$surface, surface-default);
 }
 
-.ai-faded {
-  background: #f0f1f7;
+.ai-day.ai-faded {
+  background: map-get(styles.$global-colours, ai-grey, g200);
 }

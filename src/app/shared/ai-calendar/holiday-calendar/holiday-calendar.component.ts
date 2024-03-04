@@ -1,4 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { LeaveHolidayData } from '../interface/holiday-calendar/leave-holiday.interface';
 import { Day } from '../interface/day.model';
 
@@ -6,6 +13,7 @@ import { Day } from '../interface/day.model';
   selector: 'holiday-calendar',
   templateUrl: './holiday-calendar.component.html',
   styleUrls: ['./holiday-calendar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HolidayCalendarComponent implements OnInit {
   @Input('font-family')
@@ -27,11 +35,19 @@ export class HolidayCalendarComponent implements OnInit {
   days: Day[] = [];
   dateEventMap: Map<string, LeaveHolidayData[]> = new Map();
 
-  constructor() {}
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.leaveHolidayData = this.leaveHoliday;
     this.generateCalendar(this.currentDate);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.resource) {
+      this.leaveHolidayData = changes.leaveHoliday.currentValue;
+      this.generateCalendar(this.currentDate);
+      this.cdr.detectChanges();
+    }
   }
 
   generateCalendar(date: Date): void {

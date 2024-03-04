@@ -1,4 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { Day } from '../interface/day.model';
 import { ResourceData } from '../interface/team-absence/resource-data.interface';
 import { TeamLeaveHolidayData } from '../interface/team-absence/team-leave-holiday.interface';
@@ -7,6 +14,7 @@ import { TeamLeaveHolidayData } from '../interface/team-absence/team-leave-holid
   selector: 'team-absence',
   templateUrl: './team-absence.component.html',
   styleUrls: ['./team-absence.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TeamAbsenceComponent implements OnInit {
   @Input('font-family')
@@ -30,12 +38,21 @@ export class TeamAbsenceComponent implements OnInit {
   days: Day[] = [];
   dateEventMap: Map<string, Map<string, TeamLeaveHolidayData[]>> = new Map();
 
-  constructor() {}
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.resourceData = this.resource;
     this.teamLeavesHolidayData = this.teamLeavesHoliday;
     this.generateCalendar(this.currentDate);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.resource || changes.teamLeavesHoliday) {
+      this.resourceData = changes.resource.currentValue;
+      this.teamLeavesHolidayData = changes.teamLeavesHoliday.currentValue;
+      this.generateCalendar(this.currentDate);
+      this.cdr.detectChanges();
+    }
   }
 
   generateCalendar(date: Date): void {
