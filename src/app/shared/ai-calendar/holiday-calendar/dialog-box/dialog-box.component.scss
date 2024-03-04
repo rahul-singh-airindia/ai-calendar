@@ -1,6 +1,6 @@
 @use "../../styles.scss";
 
-.dialog-container {
+.ai-dialog-container {
   position: fixed;
   z-index: 999;
   top: 0;
@@ -9,7 +9,7 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 
-  .dialog-box {
+  .ai-dialog-box {
     box-shadow: 0px 4px 8px -2px rgba(30, 41, 59, 0.05);
     position: absolute;
     z-index: 999;
@@ -22,12 +22,12 @@
     background-color: map-get(styles.$surface, surface-default);
     border-radius: styles.$border-radius-sm;
 
-    .dialog-header {
+    .ai-dialog-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      .dialog-title {
+      .ai-dialog-title {
         font-size: styles.$font-size-xs;
         font-style: normal;
         font-weight: 700;
@@ -35,7 +35,7 @@
         color: map-get(styles.$text, text-subtle);
       }
 
-      .close-button {
+      .ai-close-button {
         padding: styles.px2em(5px) styles.px2em(10px);
         background-color: transparent;
         cursor: pointer;
@@ -48,10 +48,10 @@
       }
     }
 
-    .dialog-content {
+    .ai-dialog-content {
       margin-bottom: styles.px2em(10px);
 
-      .event {
+      .ai-event {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -60,13 +60,13 @@
         border-radius: 0 styles.$border-radius-sm styles.$border-radius-sm 0;
         margin-top: styles.px2em(10px);
 
-        .title {
+        .ai-title {
           font-size: styles.$font-size-xs;
           font-weight: 700;
           line-height: styles.px2em(15px);
         }
 
-        .content {
+        .ai-content {
           overflow: hidden;
           font-size: styles.$font-size-xxs;
           font-weight: 600;
@@ -76,42 +76,42 @@
           color: map-get(styles.$text, text-subtle);
         }
 
-        .title,
-        .content {
+        .ai-title,
+        .ai-content {
           white-space: nowrap;
         }
       }
 
-      .event.pending {
+      .ai-event.ai-pending {
         background-color: map-get(styles.$global-colours, ai-orange, o50);
         border-left: 2px solid map-get(styles.$global-colours, ai-orange, o500);
         color: map-get(styles.$global-colours, ai-orange, o500);
 
-        .title svg {
+        .ai-title svg {
           width: styles.px2em(16px);
           height: styles.px2em(16px);
           fill: map-get(styles.$global-colours, ai-orange, o500);
         }
       }
 
-      .event.approved {
+      .ai-event.ai-approved {
         background-color: map-get(styles.$global-colours, ai-green, g50);
         border-left: 2px solid map-get(styles.$semantic, positive);
         color: map-get(styles.$semantic, positive);
 
-        .title svg {
+        .ai-title svg {
           width: styles.px2em(16px);
           height: styles.px2em(16px);
           fill: map-get(styles.$semantic, positive);
         }
       }
 
-      .event.all-day {
+      .ai-event.ai-all-day {
         background-color: #f1e2f1;
         border-left: 2px solid map-get(styles.$global-colours, ai-purple, p600);
         color: map-get(styles.$global-colours, ai-purple, p600);
 
-        .title svg {
+        .ai-title svg {
           width: styles.px2em(16px);
           height: styles.px2em(16px);
           fill: map-get(styles.$global-colours, ai-purple, p600);
@@ -120,11 +120,7 @@
     }
   }
 
-  .dialog-box.visible {
+  .ai-dialog-box.ai-visible {
     display: block;
   }
-}
-
-.more {
-  white-space: nowrap;
 }

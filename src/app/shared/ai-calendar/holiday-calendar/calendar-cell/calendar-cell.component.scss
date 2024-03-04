@@ -1,12 +1,12 @@
 @use "../../styles.scss";
 
-.date-month {
+.ai-date-month {
   display: flex;
   align-items: center;
   gap: styles.px2em(5px);
 
-  .month-name,
-  .date {
+  .ai-month-name,
+  .ai-date {
     color: map-get(styles.$text, text-subtle);
     font-size: styles.$font-size-sm;
     font-style: normal;
@@ -15,7 +15,7 @@
     letter-spacing: styles.px2em(0.035px);
   }
 
-  .date.today {
+  .ai-date.ai-today {
     display: flex;
     width: styles.px2em(16px);
     height: styles.px2em(16px);
@@ -31,14 +31,14 @@
   }
 }
 
-.more {
+.ai-more {
   color: map-get(styles.$text, text-default);
   font-size: styles.$font-size-xs;
   line-height: styles.px2em(19.8px);
   cursor: pointer;
 }
 
-.more.mobile {
+.ai-more.ai-mobile {
   position: absolute;
   bottom: 1px;
   right: 2px;

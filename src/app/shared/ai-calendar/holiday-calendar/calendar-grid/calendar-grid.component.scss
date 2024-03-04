@@ -1,13 +1,13 @@
 @use "../../styles.scss";
 
-.days {
+.ai-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   height: 100%;
   width: fit-content;
   overflow: hidden;
 
-  .day {
+  .ai-day {
     display: flex;
     width: styles.px2em(120px);
     height: styles.px2em(102px);
@@ -20,19 +20,19 @@
     position: relative;
   }
 
-  .day.current-month {
+  .ai-day.ai-current-month {
     background-color: map-get(styles.$surface, surface-default);
   }
 
-  .day.faded {
+  .ai-day.ai-faded {
     background: map-get(styles.$global-colours, ai-grey, g200);
   }
 }
 
-.days.mobile {
+.ai-days.ai-mobile {
   height: fit-content;
 
-  .day {
+  .ai-day {
     justify-content: center;
     align-items: center;
     width: styles.px2em(28px);

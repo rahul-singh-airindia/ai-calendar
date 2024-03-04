@@ -1,6 +1,6 @@
 @use "../../styles.scss";
 
-.event.desktop {
+.ai-event.ai-desktop {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -17,7 +17,7 @@
   cursor: pointer;
   border-radius: 0px styles.$border-radius-sm styles.$border-radius-sm 0px;
 
-  .title {
+  .ai-title {
     display: flex;
     align-items: flex-start;
     gap: styles.px2em(4px);
@@ -30,7 +30,7 @@
     overflow: hidden;
   }
 
-  .status {
+  .ai-status {
     font-size: styles.$font-size-xs;
     font-style: normal;
     font-weight: 400;
@@ -40,43 +40,43 @@
   }
 }
 
-.event.desktop.pending {
+.ai-event.ai-desktop.ai-pending {
   background-color: map-get(styles.$global-colours, ai-orange, o50);
   border-left: 2px solid map-get(styles.$global-colours, ai-orange, o500);
   color: map-get(styles.$global-colours, ai-orange, o500);
 
-  .title svg {
+  .ai-title svg {
     width: styles.px2em(16px);
     height: styles.px2em(16px);
     fill: map-get(styles.$global-colours, ai-orange, o500);
   }
 }
 
-.event.desktop.approved {
+.ai-event.ai-desktop.ai-approved {
   background-color: map-get(styles.$global-colours, ai-green, g50);
   border-left: 2px solid map-get(styles.$semantic, positive);
   color: map-get(styles.$semantic, positive);
 
-  .title svg {
+  .ai-title svg {
     width: styles.px2em(16px);
     height: styles.px2em(16px);
     fill: map-get(styles.$semantic, positive);
   }
 }
 
-.event.desktop.all-day {
+.ai-event.ai-desktop.ai-all-day {
   background-color: #f1e2f1;
   border-left: 2px solid map-get(styles.$global-colours, ai-purple, p600);
   color: map-get(styles.$global-colours, ai-purple, p600);
 
-  .title svg {
+  .ai-title svg {
     width: styles.px2em(16px);
     height: styles.px2em(16px);
     fill: map-get(styles.$global-colours, ai-purple, p600);
   }
 }
 
-.event.mobile {
+.ai-event.ai-mobile {
   position: absolute;
   bottom: styles.px2em(8px);
   display: inline-block;
@@ -87,14 +87,14 @@
   cursor: pointer;
 }
 
-.event.mobile.pending {
+.ai-event.ai-mobile.ai-pending {
   background-color: map-get(styles.$global-colours, ai-orange, o500);
 }
 
-.event.mobile.approved {
+.ai-event.ai-mobile.ai-approved {
   background-color: map-get(styles.$semantic, positive);
 }
 
-.event.mobile.all-day {
+.ai-event.ai-mobile.ai-all-day {
   background-color: map-get(styles.$global-colours, ai-purple, p600);
 }

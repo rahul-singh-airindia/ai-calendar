@@ -1,6 +1,6 @@
 @use "../../styles.scss";
 
-.header-toolbar {
+.ai-header-toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,18 +8,18 @@
   padding: styles.$padding-md styles.$padding-md styles.$padding-sm
     styles.$padding-md;
 
-  .toolbar-title {
+  .ai-toolbar-title {
     font-size: styles.$font-size-md;
     font-style: normal;
     font-weight: 700;
     line-height: styles.px2em(22.5px);
   }
 
-  .btn-group {
+  .ai-btn-group {
     display: flex;
     gap: styles.px2em(8px);
 
-    .btn {
+    .ai-btn {
       width: styles.px2em(36px);
       height: styles.px2em(36px);
       padding: styles.$padding-sm;
@@ -33,14 +33,14 @@
   }
 }
 
-.header-toolbar.mobile {
-  .toolbar-title {
+.ai-header-toolbar.ai-mobile {
+  .ai-toolbar-title {
     font-size: styles.$font-size-default;
     line-height: styles.px2em(20.5px);
   }
 
-  .btn-group {
-    .btn {
+  .ai-btn-group {
+    .ai-btn {
       width: styles.px2em(36px);
       height: styles.px2em(36px);
       padding: styles.$padding-sm;

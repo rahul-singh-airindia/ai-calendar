@@ -1,11 +1,11 @@
 <div
   *ngIf="device === 'desktop'"
-  class="event {{ device }} {{ getLeaveStatus(leaveHolidayData) }}"
+  class="ai-event ai-{{ device }} ai-{{ getLeaveStatus(leaveHolidayData) }}"
   [ngStyle]="{
     width: getEventTileWidth(leaveHolidayData)
   }"
 >
-  <div class="title">
+  <div class="ai-title">
     <svg
       *ngIf="getEventTitle(leaveHolidayData) === 'Casual'"
       xmlns="http://www.w3.org/2000/svg"
@@ -78,14 +78,14 @@
     {{ getEventTitle(leaveHolidayData) }}
   </div>
 
-  <div class="status">
+  <div class="ai-status">
     {{ getEventStatus(leaveHolidayData) }}
   </div>
 </div>
 
 <div
   *ngIf="device === 'mobile'"
-  class="event {{ getLeaveStatus(leaveHolidayData) }} {{ device }}"
+  class="ai-event ai-{{ getLeaveStatus(leaveHolidayData) }} ai-{{ device }}"
 >
-  <span class="circle"></span>
+  <span class="ai-circle"></span>
 </div>

@@ -1,12 +1,12 @@
 @use "../../styles.scss";
 
-.week-header {
+.ai-week-header {
   display: flex;
   align-items: flex-start;
   align-self: stretch;
   background: map-get(styles.$surface, surface-default);
 
-  .week-day {
+  .ai-week-day {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,7 +17,7 @@
     padding: styles.$padding-sm;
     border-bottom: 1px solid map-get(styles.$stroke, stroke-default);
 
-    .day-name {
+    .ai-day-name {
       font-size: styles.$font-size-xs;
       font-style: normal;
       font-weight: 700;
@@ -28,8 +28,8 @@
   }
 }
 
-.week-header.mobile {
-  .week-day {
+.ai-week-header.ai-mobile {
+  .ai-week-day {
     flex: 0 0 styles.px2em(30px);
     height: styles.px2em(11px);
   }

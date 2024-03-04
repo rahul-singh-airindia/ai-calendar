@@ -1,5 +1,5 @@
-<div class="date-month">
-  <div class="month-name" *ngIf="date.getDate() === 1">
+<div class="ai-date-month">
+  <div class="ai-month-name" *ngIf="date.getDate() === 1">
     {{
       date.toLocaleDateString("en-US", {
         month: "short"
@@ -7,14 +7,14 @@
     }}
   </div>
 
-  <div class="date" [ngClass]="{ today: isToday(date) }">
+  <div class="ai-date" [ngClass]="{ today: isToday(date) }">
     {{ date.getDate() }}
   </div>
 </div>
 
 <div
   *ngIf="getEventCount(date) > 1"
-  class="more {{ device }}"
+  class="ai-more ai-{{ device }}"
   (click)="toggleDialog()"
 >
   +{{ getEventCount(date) - 1 }} <span *ngIf="device === 'desktop'">more</span>
