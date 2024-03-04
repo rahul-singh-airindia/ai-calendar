@@ -8,12 +8,10 @@
 
   .ai-week-day {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: styles.px2em(10px);
-    flex: 0 0 styles.px2em(122px);
-    height: styles.px2em(14px);
+    flex: 1 0 0;
     padding: styles.$padding-sm;
     border-bottom: 1px solid map-get(styles.$stroke, stroke-default);
 

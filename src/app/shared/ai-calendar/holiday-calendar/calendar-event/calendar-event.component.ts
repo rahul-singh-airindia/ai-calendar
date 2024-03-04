@@ -54,7 +54,7 @@ export class CalendarEventComponent implements OnInit {
 
   getEventTileWidth(event: LeaveHolidayData): string {
     const eventDuration = this.getEventDuration(event);
-    const emValue = this.px2em(eventDuration * 138 - 68);
-    return emValue + 'em';
+    const emValue = eventDuration * 100 - 15;
+    return emValue + '%';
   }
 }

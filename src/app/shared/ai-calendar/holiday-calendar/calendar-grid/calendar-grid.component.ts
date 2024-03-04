@@ -17,6 +17,8 @@ export class CalendarGridComponent implements OnInit {
   @Input('dateEventMap')
   dateEventMap: Map<string, LeaveHolidayData[]> = new Map();
 
+  weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
   constructor() {}
 
   ngOnInit(): void {}

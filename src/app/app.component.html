@@ -6,16 +6,21 @@
   [teamLeavesHoliday]="teamLeavesHoliday"
 ></team-absence> -->
 
-<!-- <holiday-calendar
-  [device]="'desktop'"
-  [scale]="1"
-  [width]="'100vw'"
-  [height]="'100vh'"
-  [leaveHoliday]="leaveHoliday.data.upcomingHolidayLeavesCalendarView"
-></holiday-calendar> -->
+<div class="row">
+  <div class="col-9">
+    <holiday-calendar
+      [leaveHoliday]="leaveHoliday.data.upcomingHolidayLeavesCalendarView"
+    ></holiday-calendar>
+  </div>
+  <div class="col-3"></div>
+</div>
 
-<learning-calendar
+<holiday-calendar
+  [leaveHoliday]="leaveHoliday.data.upcomingHolidayLeavesCalendarView"
+></holiday-calendar>
+
+<!-- <learning-calendar
   [width]="'50vw'"
   [height]="'50vh'"
   [learningCalendar]="learningCalendar"
-></learning-calendar>
+></learning-calendar> -->

@@ -20,9 +20,11 @@
     gap: styles.px2em(8px);
 
     .ai-btn {
-      width: styles.px2em(36px);
-      height: styles.px2em(36px);
-      padding: styles.$padding-sm;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: styles.px2em(32px);
+      height: styles.px2em(32px);
       background-color: map-get(styles.$global-colours, ai-grey, g200);
       cursor: pointer;
       border: none;
@@ -37,19 +39,5 @@
   .ai-toolbar-title {
     font-size: styles.$font-size-default;
     line-height: styles.px2em(20.5px);
-  }
-
-  .ai-btn-group {
-    .ai-btn {
-      width: styles.px2em(36px);
-      height: styles.px2em(36px);
-      padding: styles.$padding-sm;
-      background-color: map-get(styles.$global-colours, ai-grey, g200);
-      cursor: pointer;
-      border: none;
-      border-radius: 50%;
-      font-weight: bold;
-      color: map-get(styles.$interactive, interactive-default);
-    }
   }
 }

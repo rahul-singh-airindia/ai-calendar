@@ -1,4 +1,10 @@
 <div class="ai-days ai-{{ device }}">
+  <div class="ai-week-day" *ngFor="let weekDay of weekDays">
+    <span class="ai-day-name">
+      {{ weekDay }}
+    </span>
+  </div>
+
   <calendar-cell
     *ngFor="let day of days"
     class="ai-day"
