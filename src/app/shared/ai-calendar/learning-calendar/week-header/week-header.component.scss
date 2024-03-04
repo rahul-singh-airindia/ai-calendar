@@ -11,14 +11,18 @@
     align-items: center;
     flex: 1 0 0;
     gap: styles.px2em(10px);
+    min-width: styles.px2em(30px);
     padding: styles.$padding-sm;
     background: map-get(styles.$surface, surface-default);
     border-bottom: 1px solid map-get(styles.$stroke, stroke-default);
-    font-size: styles.$font-size-xs;
-    font-style: normal;
-    font-weight: 700;
-    line-height: styles.px2em(15px);
-    color: map-get(styles.$text, text-subtle);
-    text-align: center;
+
+    .ai-day-name {
+      font-size: styles.$font-size-xs;
+      font-style: normal;
+      font-weight: 700;
+      line-height: styles.px2em(15px);
+      color: map-get(styles.$text, text-subtle);
+      text-align: center;
+    }
   }
 }

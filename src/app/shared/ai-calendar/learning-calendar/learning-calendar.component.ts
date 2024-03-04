@@ -22,8 +22,6 @@ export class LearningCalendarComponent implements OnInit {
   width: string = '';
   @Input('height')
   height: string = '';
-  @Input('scale')
-  scale: number = 1;
 
   @Input('learningCalendar')
   learningCalendar: LearningCalendarData[] = [];
