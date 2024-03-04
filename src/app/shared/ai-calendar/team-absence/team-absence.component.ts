@@ -18,8 +18,10 @@ export class TeamAbsenceComponent implements OnInit {
   height: string = '100%';
   @Input('scale')
   scale: number = 1;
-  @Input('teamAbsence')
-  teamAbsence: TeamAbsence = {} as TeamAbsence;
+  @Input('resource')
+  resource: ResourceData[] = [];
+  @Input('teamLeavesHoliday')
+  teamLeavesHoliday: TeamLeaveHolidayData[] = [];
 
   resourceData: ResourceData[] = [];
   teamLeavesHolidayData: TeamLeaveHolidayData[] = [];
@@ -31,8 +33,8 @@ export class TeamAbsenceComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.resourceData = this.teamAbsence.data.resourceData;
-    this.teamLeavesHolidayData = this.teamAbsence.data.teamLeavesHolidayData;
+    this.resourceData = this.resourceData;
+    this.teamLeavesHolidayData = this.teamLeavesHolidayData;
     this.generateCalendar(this.currentDate);
   }
 

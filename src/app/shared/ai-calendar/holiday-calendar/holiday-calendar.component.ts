@@ -20,7 +20,8 @@ export class HolidayCalendarComponent implements OnInit {
   @Input('device')
   device: string = 'desktop';
   @Input('leaveHoliday')
-  leaveHoliday: HolidayCalendar = {} as HolidayCalendar;
+  // leaveHoliday: HolidayCalendar = {} as HolidayCalendar;
+  leaveHoliday: LeaveHolidayData[] = [];
 
   leaveHolidayData: LeaveHolidayData[] = [];
   currentDate: Date = new Date();
@@ -30,8 +31,7 @@ export class HolidayCalendarComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.leaveHolidayData =
-      this.leaveHoliday.data.upcomingHolidayLeavesCalendarView;
+    this.leaveHolidayData = this.leaveHoliday;
     this.generateCalendar(this.currentDate);
   }
 

@@ -10,5 +10,7 @@ import leaveHolidayData from 'src/assets/data/holiday_calendar.json';
 export class AppComponent {
   title = 'aiCalendar';
   teamAbsence = teamAbsenceData;
+  resource = teamAbsenceData.data.resourceData;
+  teamLeavesHoliday = teamAbsenceData.data.teamLeavesHolidayData;
   leaveHoliday = leaveHolidayData;
 }
