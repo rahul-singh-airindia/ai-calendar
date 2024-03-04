@@ -1,0 +1,25 @@
+@use "../styles.scss";
+
+.holiday-calendar {
+  border-radius: styles.$border-radius-sm;
+  border: 1px solid map-get(styles.$stroke, stroke-subtle);
+  background-color: map-get(styles.$global-colours, ai-base, ai-white);
+  overflow: scroll;
+
+  .calendar-header {
+    position: sticky;
+    width: styles.px2em(966px);
+    top: 0;
+    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.05);
+    z-index: 2;
+    background-color: map-get(styles.$global-colours, ai-base, ai-white);
+  }
+}
+
+.holiday-calendar.mobile {
+  .calendar-header {
+    width: styles.px2em(322px);
+    box-shadow: 0px 5.467px 10.933px 0px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+}

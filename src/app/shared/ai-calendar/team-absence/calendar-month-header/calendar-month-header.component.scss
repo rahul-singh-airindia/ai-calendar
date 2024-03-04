@@ -1,0 +1,52 @@
+@use "../../styles.scss";
+
+.month-header {
+  display: flex;
+  align-items: flex-start;
+
+  .day {
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 styles.px2em(47px);
+    height: styles.px2em(37px);
+    padding: styles.$padding-sm 0;
+    border-right: 1px solid map-get(styles.$surface, surface-default);
+    border-radius: styles.px2em(8px) styles.px2em(8px) 0 0;
+    color: map-get(styles.$text, text-subtle);
+
+    .day-date {
+      font-size: styles.$font-size-sm;
+      font-style: normal;
+      font-weight: 400;
+      line-height: styles.px2em(20px);
+      text-align: center;
+      letter-spacing: styles.px2em(0.035px);
+    }
+
+    .day-name {
+      font-size: styles.$font-size-xxs;
+      font-style: normal;
+      font-weight: 600;
+      line-height: styles.px2em(14px);
+      text-align: center;
+      letter-spacing: styles.px2em(0.04px);
+    }
+  }
+
+  .day.today {
+    font-weight: bold !important;
+  }
+
+  .faded {
+    background-color: map-get(styles.$global-colours, ai-grey, g100);
+  }
+
+  .day.active {
+    background-color: map-get(styles.$global-colours, ai-purple, p800);
+    border-radius: styles.px2em(8px);
+    color: map-get(styles.$text, text-on-dark);
+  }
+}

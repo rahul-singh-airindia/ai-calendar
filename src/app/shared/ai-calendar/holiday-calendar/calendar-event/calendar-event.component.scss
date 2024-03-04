@@ -1,0 +1,100 @@
+@use "../../styles.scss";
+
+.event.desktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: styles.px2em(8px);
+  align-self: stretch;
+  position: absolute;
+  z-index: 1;
+  bottom: styles.px2em(8px);
+  overflow: hidden;
+  width: styles.px2em(78px);
+  margin-top: styles.px2em(15px);
+  padding: styles.$padding-sm styles.$padding-md;
+  cursor: pointer;
+  border-radius: 0px styles.$border-radius-sm styles.$border-radius-sm 0px;
+
+  .title {
+    display: flex;
+    align-items: flex-start;
+    gap: styles.px2em(4px);
+    font-size: styles.$font-size-sm;
+    font-style: normal;
+    font-weight: 700;
+    line-height: styles.px2em(17.5px);
+    text-align: center;
+    max-height: styles.px2em(35px);
+    overflow: hidden;
+  }
+
+  .status {
+    font-size: styles.$font-size-xs;
+    font-style: normal;
+    font-weight: 400;
+    line-height: styles.px2em(14.4px);
+    color: map-get(styles.$text, text-subtle);
+    letter-spacing: styles.px2em(0.048px);
+  }
+}
+
+.event.desktop.pending {
+  background-color: map-get(styles.$global-colours, ai-orange, o50);
+  border-left: 2px solid map-get(styles.$global-colours, ai-orange, o500);
+  color: map-get(styles.$global-colours, ai-orange, o500);
+
+  .title svg {
+    width: styles.px2em(16px);
+    height: styles.px2em(16px);
+    fill: map-get(styles.$global-colours, ai-orange, o500);
+  }
+}
+
+.event.desktop.approved {
+  background-color: map-get(styles.$global-colours, ai-green, g50);
+  border-left: 2px solid map-get(styles.$semantic, positive);
+  color: map-get(styles.$semantic, positive);
+
+  .title svg {
+    width: styles.px2em(16px);
+    height: styles.px2em(16px);
+    fill: map-get(styles.$semantic, positive);
+  }
+}
+
+.event.desktop.all-day {
+  background-color: #f1e2f1;
+  border-left: 2px solid map-get(styles.$global-colours, ai-purple, p600);
+  color: map-get(styles.$global-colours, ai-purple, p600);
+
+  .title svg {
+    width: styles.px2em(16px);
+    height: styles.px2em(16px);
+    fill: map-get(styles.$global-colours, ai-purple, p600);
+  }
+}
+
+.event.mobile {
+  position: absolute;
+  bottom: styles.px2em(8px);
+  display: inline-block;
+  width: styles.px2em(8px);
+  height: styles.px2em(8px);
+  border-radius: 50%;
+  translate: -50% 50%;
+  cursor: pointer;
+}
+
+.event.mobile.pending {
+  background-color: map-get(styles.$global-colours, ai-orange, o500);
+}
+
+.event.mobile.approved {
+  background-color: map-get(styles.$semantic, positive);
+}
+
+.event.mobile.all-day {
+  background-color: map-get(styles.$global-colours, ai-purple, p600);
+}

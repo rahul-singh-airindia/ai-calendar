@@ -1,0 +1,26 @@
+<div class="resource-container">
+  <!-- <span
+    class="icon icon-container"
+    role="img"
+    [ngClass]="{ hidden: !isCollapsible }"
+    (click)="handleCollapse()"
+  >
+    <span class="collapse-icon" *ngIf="isCollapsed"> &#xFF0B; </span>
+
+    <span class="collapse-icon" *ngIf="!isCollapsed"> &#xFF0D; </span>
+  </span> -->
+
+  <span class="image">
+    <span class="text">
+      {{ getTitleInitials(resource.title) }}
+    </span>
+  </span>
+
+  <span class="title">
+    {{ resource.title }}
+  </span>
+</div>
+
+<div *ngIf="isCollapsible && !isCollapsed">
+  <ng-content></ng-content>
+</div>

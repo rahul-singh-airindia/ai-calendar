@@ -1,0 +1,27 @@
+<div
+  class="holiday-calendar {{ device }}"
+  [ngStyle]="{
+    'font-family': fontFamily,
+    'font-size': scale + 'em',
+    width: width,
+    height: height
+  }"
+>
+  <div class="calendar-header">
+    <header-toolbar
+      [device]="device"
+      [currentDate]="currentDate"
+      (previousMonth)="previousMonth()"
+      (nextMonth)="nextMonth()"
+    ></header-toolbar>
+
+    <week-header [device]="device"></week-header>
+  </div>
+
+  <calendar-grid
+    [device]="device"
+    [days]="days"
+    [currentDate]="currentDate"
+    [dateEventMap]="dateEventMap"
+  ></calendar-grid>
+</div>

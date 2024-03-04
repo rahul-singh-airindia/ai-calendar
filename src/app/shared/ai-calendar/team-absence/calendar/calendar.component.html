@@ -1,0 +1,9 @@
+<div class="calendar-grid">
+  <calendar-month-header [days]="days"></calendar-month-header>
+
+  <calendar-grid
+    [days]="getDaysInCurrentMonth()"
+    [resourceData]="resourceData"
+    [dateEventMap]="dateEventMap"
+  ></calendar-grid>
+</div>

@@ -1,0 +1,68 @@
+@use "../../styles.scss";
+
+.event {
+  display: flex;
+  align-items: center;
+  gap: styles.px2em(20px);
+  position: absolute;
+  z-index: 2;
+  left: styles.px2em(4px);
+  overflow: hidden;
+  padding: styles.$padding-sm;
+  cursor: pointer;
+  border-radius: 0 styles.$border-radius-sm styles.$border-radius-sm 0;
+
+  .title {
+    font-size: styles.$font-size-xs;
+    font-weight: 700;
+    line-height: styles.px2em(15px);
+  }
+
+  .content {
+    overflow: hidden;
+    font-size: styles.$font-size-xxs;
+    font-weight: 600;
+    line-height: styles.px2em(14px);
+    text-overflow: ellipsis;
+    letter-spacing: styles.px2em(0.04px);
+  }
+
+  .title,
+  .content {
+    white-space: nowrap;
+  }
+}
+
+.event.leave {
+  background-color: map-get(styles.$global-colours, ai-blue, b50);
+  border-left: 2px solid map-get(styles.$global-colours, ai-blue, b600);
+
+  .title {
+    color: map-get(styles.$global-colours, ai-blue, b800);
+  }
+
+  .content {
+    color: map-get(styles.$text, text-subtle);
+  }
+}
+
+.event.holiday {
+  background-color: #f4e9f4;
+  border-left: 2px solid map-get(styles.$global-colours, ai-purple, p600);
+
+  .title {
+    color: map-get(styles.$global-colours, ai-purple, p600);
+  }
+
+  .content {
+    color: map-get(styles.$text, text-subtle);
+  }
+}
+
+.more {
+  position: absolute;
+  bottom: styles.px2em(5px);
+  font-size: styles.$font-size-xxs;
+  cursor: pointer;
+  white-space: nowrap;
+}

@@ -1,0 +1,18 @@
+@use "../styles.scss";
+
+$list-width: 25%;
+$list-min-width: styles.px2em(200px);
+
+.team-absence {
+  display: flex;
+  overflow: hidden scroll;
+
+  .list {
+    width: $list-width;
+    min-width: $list-min-width;
+  }
+
+  .calendar {
+    width: 100%;
+  }
+}

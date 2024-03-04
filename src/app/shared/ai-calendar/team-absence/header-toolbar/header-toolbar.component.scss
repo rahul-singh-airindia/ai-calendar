@@ -1,0 +1,49 @@
+@use "../../styles.scss";
+
+.header-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: styles.$padding-sm styles.$padding-default;
+  background-color: map-get(styles.$surface, surface-default);
+  z-index: 1;
+
+  .toolbar-chunk {
+    display: flex;
+    align-items: center;
+    gap: styles.px2em(20px);
+
+    .btn {
+      padding: styles.$padding-sm;
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+      width: styles.px2em(32px);
+      height: styles.px2em(32px);
+      color: map-get(styles.$interactive, interactive-default);
+      background: transparent;
+      border-radius: 50%;
+    }
+
+    .btn.active,
+    .btn:hover {
+      background-color: map-get(styles.$global-colours, ai-purple, p800);
+      color: map-get(styles.$text, text-on-dark);
+    }
+
+    .btn.active svg,
+    .btn:hover svg {
+      fill: map-get(styles.$text, text-on-dark) !important;
+      background-color: map-get(styles.$global-colours, ai-purple, p800);
+    }
+  }
+
+  .toolbar-title {
+    font-size: styles.$font-size-md;
+    font-style: normal;
+    font-weight: 700;
+    line-height: styles.px2em(22.5px);
+  }
+}

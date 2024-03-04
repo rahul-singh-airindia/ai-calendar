@@ -1,0 +1,41 @@
+@use "../../styles.scss";
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 100%;
+  width: fit-content;
+  overflow: hidden;
+
+  .day {
+    display: flex;
+    width: styles.px2em(120px);
+    height: styles.px2em(102px);
+    padding: styles.$padding-sm;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid map-get(styles.$stroke, stroke-subtle);
+    background-color: map-get(styles.$global-colours, ai-grey, g50);
+    position: relative;
+  }
+
+  .day.current-month {
+    background-color: map-get(styles.$surface, surface-default);
+  }
+
+  .day.faded {
+    background: map-get(styles.$global-colours, ai-grey, g200);
+  }
+}
+
+.days.mobile {
+  height: fit-content;
+
+  .day {
+    justify-content: center;
+    align-items: center;
+    width: styles.px2em(28px);
+    height: styles.px2em(28px);
+  }
+}

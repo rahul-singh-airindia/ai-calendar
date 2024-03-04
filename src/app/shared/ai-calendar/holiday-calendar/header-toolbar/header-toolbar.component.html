@@ -1,0 +1,56 @@
+<div class="header-toolbar {{ device }}">
+  <div class="toolbar-title">
+    {{
+      currentDate.toLocaleDateString("en-US", {
+        month: "long",
+        year: "numeric"
+      })
+    }}
+  </div>
+
+  <div class="btn-group">
+    <button class="btn" (click)="handlePreviousMonth()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+      >
+        <g clip-path="url(#clip0_780_46266)">
+          <path
+            d="M11.6726 2.57844L10.4859 1.39844L3.89258 7.99844L10.4926 14.5984L11.6726 13.4184L6.25258 7.99844L11.6726 2.57844Z"
+            fill="#531251"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_780_46266">
+            <rect width="16" height="16" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    </button>
+
+    <button class="btn" (click)="handleNextMonth()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+      >
+        <g clip-path="url(#clip0_780_46268)">
+          <path
+            d="M4.32617 13.4184L5.50617 14.5984L12.1062 7.99844L5.50617 1.39844L4.32617 2.57844L9.74617 7.99844L4.32617 13.4184Z"
+            fill="#531251"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_780_46268">
+            <rect width="16" height="16" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    </button>
+  </div>
+</div>

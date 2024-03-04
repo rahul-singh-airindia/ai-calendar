@@ -1,0 +1,27 @@
+<div
+  class="team-absence"
+  [ngStyle]="{
+    'font-family': fontFamily,
+    'font-size': scale + 'em',
+    width: width,
+    height: height
+  }"
+>
+  <div class="list">
+    <resource-list [resourceData]="resourceData"></resource-list>
+  </div>
+
+  <div class="calendar">
+    <header-toolbar
+      [currentDate]="currentDate"
+      (previousMonth)="previousMonth()"
+      (nextMonth)="nextMonth()"
+    ></header-toolbar>
+
+    <calendar
+      [days]="days"
+      [resourceData]="resourceData"
+      [dateEventMap]="dateEventMap"
+    ></calendar>
+  </div>
+</div>

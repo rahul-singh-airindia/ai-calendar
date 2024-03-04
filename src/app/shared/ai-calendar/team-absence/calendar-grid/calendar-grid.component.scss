@@ -1,0 +1,24 @@
+@use "../../styles.scss";
+
+.row {
+  display: flex;
+  align-items: center;
+
+  .cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: styles.px2em(10px);
+    flex: 0 0 styles.px2em(47px);
+    position: relative;
+    height: styles.px2em(63px);
+    border-top: 1px solid map-get(styles.$stroke, stroke-subtle);
+    border-right: 1px solid map-get(styles.$stroke, stroke-subtle);
+    color: map-get(styles.$text, text-subtle);
+  }
+
+  .faded {
+    background-color: #f7f8fa;
+  }
+}

@@ -1,0 +1,45 @@
+@use "../../styles.scss";
+
+.date-month {
+  display: flex;
+  align-items: center;
+  gap: styles.px2em(5px);
+
+  .month-name,
+  .date {
+    color: map-get(styles.$text, text-subtle);
+    font-size: styles.$font-size-sm;
+    font-style: normal;
+    font-weight: 400;
+    line-height: styles.px2em(19.6px);
+    letter-spacing: styles.px2em(0.035px);
+  }
+
+  .date.today {
+    display: flex;
+    width: styles.px2em(16px);
+    height: styles.px2em(16px);
+    padding: styles.$padding-xs;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: styles.px2em(10px);
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: map-get(styles.$global-colours, ai-purple, p800);
+    color: map-get(styles.$text, text-on-dark);
+  }
+}
+
+.more {
+  color: map-get(styles.$text, text-default);
+  font-size: styles.$font-size-xs;
+  line-height: styles.px2em(19.8px);
+  cursor: pointer;
+}
+
+.more.mobile {
+  position: absolute;
+  bottom: 1px;
+  right: 2px;
+}

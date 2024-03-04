@@ -1,0 +1,36 @@
+@use "../../styles.scss";
+
+.week-header {
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+  background: map-get(styles.$surface, surface-default);
+
+  .week-day {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: styles.px2em(10px);
+    flex: 0 0 styles.px2em(122px);
+    height: styles.px2em(14px);
+    padding: styles.$padding-sm;
+    border-bottom: 1px solid map-get(styles.$stroke, stroke-default);
+
+    .day-name {
+      font-size: styles.$font-size-xs;
+      font-style: normal;
+      font-weight: 700;
+      line-height: styles.px2em(15px);
+      color: map-get(styles.$text, text-subtle);
+      text-align: center;
+    }
+  }
+}
+
+.week-header.mobile {
+  .week-day {
+    flex: 0 0 styles.px2em(30px);
+    height: styles.px2em(11px);
+  }
+}
