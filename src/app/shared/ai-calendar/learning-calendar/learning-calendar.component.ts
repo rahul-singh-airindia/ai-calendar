@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HolidayCalendar } from '../interface/holiday-calendar/holiday-calendar.interface';
-import { LeaveHolidayData } from '../interface/holiday-calendar/leave-holiday.interface';
+import { LearningCalendarData } from '../interface/learning-calendar/learning-calendar.interface';
 import { Day } from '../interface/day.model';
 
 @Component({
@@ -13,19 +12,20 @@ export class LearningCalendarComponent implements OnInit {
   width: string = '';
   @Input('height')
   height: string = '';
-  @Input('leaveHoliday')
-  leaveHoliday: HolidayCalendar = {} as HolidayCalendar;
 
-  leaveHolidayData: LeaveHolidayData[] = [];
+  @Input('learningCalendar')
+  learningCalendar: LearningCalendarData[] = [];
+
+  learningCalendarData: LearningCalendarData[] = [];
+
   currentDate: Date = new Date();
   days: Day[] = [];
-  dateEventMap: Map<string, LeaveHolidayData[]> = new Map();
+  dateEventMap: Map<string, LearningCalendarData[]> = new Map();
 
   constructor() {}
 
   ngOnInit(): void {
-    this.leaveHolidayData =
-      this.leaveHoliday.data.upcomingHolidayLeavesCalendarView;
+    this.learningCalendarData = this.learningCalendar;
     this.generateCalendar(this.currentDate);
   }
 
@@ -82,13 +82,13 @@ export class LearningCalendarComponent implements OnInit {
   }
 
   getStartedEvents(date: Date) {
-    return this.leaveHolidayData.filter((event) => {
-      const eventStart = new Date(event.start);
+    return this.learningCalendarData.filter((course) => {
+      const courseStart = new Date(course.courseDate);
 
       return (
-        eventStart.getFullYear() === date.getFullYear() &&
-        eventStart.getMonth() === date.getMonth() &&
-        eventStart.getDate() === date.getDate()
+        courseStart.getFullYear() === date.getFullYear() &&
+        courseStart.getMonth() === date.getMonth() &&
+        courseStart.getDate() === date.getDate()
       );
     });
   }
@@ -100,6 +100,8 @@ export class LearningCalendarComponent implements OnInit {
       const targetEvents = this.getStartedEvents(day.date);
       this.dateEventMap.set(day.date.toLocaleDateString(), targetEvents);
     }
+
+    console.log(this.dateEventMap);
   }
 
   previousMonth(): void {

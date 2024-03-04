@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HolidayCalendar } from '../interface/holiday-calendar/holiday-calendar.interface';
 import { LeaveHolidayData } from '../interface/holiday-calendar/leave-holiday.interface';
 import { Day } from '../interface/day.model';
 
@@ -20,10 +19,10 @@ export class HolidayCalendarComponent implements OnInit {
   @Input('device')
   device: string = 'desktop';
   @Input('leaveHoliday')
-  // leaveHoliday: HolidayCalendar = {} as HolidayCalendar;
   leaveHoliday: LeaveHolidayData[] = [];
 
   leaveHolidayData: LeaveHolidayData[] = [];
+
   currentDate: Date = new Date();
   days: Day[] = [];
   dateEventMap: Map<string, LeaveHolidayData[]> = new Map();

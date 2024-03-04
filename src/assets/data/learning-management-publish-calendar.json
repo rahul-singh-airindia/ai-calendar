@@ -1,0 +1,45 @@
+{
+  "status": {
+    "code": 200,
+    "message": "SUCCESS",
+    "errors": null
+  },
+  "data": {
+    "courseData": [
+      {
+        "programName": "Project Management Professional",
+        "programDescription": [
+          "The PMP certification provides a thorough understanding of project management principles, processes, and methodologies.",
+          "It equips professionals with the skills to lead and direct projects effectively, ensuring successful outcomes and stakeholder satisfaction.",
+          "Upholding ethical standards and professional conduct is integral to maintaining the credibility and integrity of the PMP certification."
+        ],
+        "programCategory": "Leadership",
+        "approval": "This course needs manager approval",
+        "programLocation": "Gurugram",
+        "trainerName": "By PMI",
+        "courseDate": "July 10, 2024",
+        "courseTime": "10:00 AM",
+        "seatLeft": 5,
+        "daysLeft": 5,
+        "approvalRequired": "yes"
+      },
+      {
+        "programName": "Project Management Professional",
+        "programDescription": [
+          "The PMP certification provides a thorough understanding of project management principles, processes, and methodologies.",
+          "It equips professionals with the skills to lead and direct projects effectively, ensuring successful outcomes and stakeholder satisfaction.",
+          "Upholding ethical standards and professional conduct is integral to maintaining the credibility and integrity of the PMP certification."
+        ],
+        "programCategory": "Leadership",
+        "approval": "This course needs manager approval",
+        "programLocation": "Gurugram",
+        "trainerName": "By PMI",
+        "courseDate": "July 15, 2024",
+        "courseTime": "12:00 AM",
+        "seatLeft": 5,
+        "daysLeft": 5,
+        "approvalRequired": "No"
+      }
+    ]
+  }
+}

@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Day } from '../interface/day.model';
-import { TeamAbsence } from '../interface/team-absence/team-absence.interface';
 import { ResourceData } from '../interface/team-absence/resource-data.interface';
 import { TeamLeaveHolidayData } from '../interface/team-absence/team-leave-holiday.interface';
 
@@ -18,6 +17,7 @@ export class TeamAbsenceComponent implements OnInit {
   height: string = '100%';
   @Input('scale')
   scale: number = 1;
+
   @Input('resource')
   resource: ResourceData[] = [];
   @Input('teamLeavesHoliday')

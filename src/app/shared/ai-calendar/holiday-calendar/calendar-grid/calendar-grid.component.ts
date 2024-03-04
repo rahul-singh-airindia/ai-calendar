@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Day } from 'src/app/shared/ai-calendar/interface/day.model';
+import { Day } from '../../interface/day.model';
 import { LeaveHolidayData } from '../../interface/holiday-calendar/leave-holiday.interface';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { LeaveHolidayData } from '../../interface/holiday-calendar/leave-holiday.interface';
+import { LearningCalendarData } from '../../interface/learning-calendar/learning-calendar.interface';
 
 @Component({
   selector: 'calendar-cell',
@@ -12,7 +12,7 @@ export class CalendarCellComponent implements OnInit {
   @Input('currentDate')
   currentDate: Date = new Date();
   @Input('dateEventMap')
-  dateEventMap: Map<string, LeaveHolidayData[]> = new Map();
+  dateEventMap: Map<string, LearningCalendarData[]> = new Map();
   @Input('selected')
   isSelected = false;
 
@@ -47,14 +47,14 @@ export class CalendarCellComponent implements OnInit {
     return this.dateEventMap.get(date.toLocaleDateString())?.length || 0;
   }
 
-  getEvent(date: Date): LeaveHolidayData {
+  getEvent(date: Date): LearningCalendarData {
     return (
       this.dateEventMap.get(date.toLocaleDateString())?.[0] ||
-      ({} as LeaveHolidayData)
+      ({} as LearningCalendarData)
     );
   }
 
-  getEvents(date: Date): LeaveHolidayData[] {
+  getEvents(date: Date): LearningCalendarData[] {
     return this.dateEventMap.get(date.toLocaleDateString()) || [];
   }
 }

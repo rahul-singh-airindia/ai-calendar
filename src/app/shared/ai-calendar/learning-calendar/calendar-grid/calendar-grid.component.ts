@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Day } from 'src/app/shared/ai-calendar/interface/day.model';
-import { LeaveHolidayData } from '../../interface/holiday-calendar/leave-holiday.interface';
+import { Day } from '../../interface/day.model';
+import { LearningCalendarData } from '../../interface/learning-calendar/learning-calendar.interface';
 
 @Component({
   selector: 'calendar-grid',
@@ -13,7 +13,7 @@ export class CalendarGridComponent implements OnInit {
   @Input('currentDate')
   currentDate: Date = new Date();
   @Input('dateEventMap')
-  dateEventMap: Map<string, LeaveHolidayData[]> = new Map();
+  dateEventMap: Map<string, LearningCalendarData[]> = new Map();
 
   @Output('selectDay')
   selectDay = new EventEmitter<Day>();
