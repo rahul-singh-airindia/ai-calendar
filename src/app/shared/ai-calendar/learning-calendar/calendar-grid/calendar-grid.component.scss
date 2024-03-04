@@ -1,30 +1,35 @@
-.days {
+@use "../../styles.scss";
+
+.ai-days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  width: fit-content;
+  height: fit-content;
+
+  .ai-day {
+    display: flex;
+    width: styles.px2em(20px);
+    height: styles.px2em(20px);
+    padding: 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #f0f1f7;
+    background-color: #fbfbfc;
+    position: relative;
+    cursor: pointer;
+  }
 }
 
-.day {
-  display: flex;
-  height: 38px;
-  padding: 8px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #f0f1f7;
-  background-color: #fbfbfc;
-  position: relative;
-  cursor: pointer;
-}
-
-.day.selected {
+.ai-day.ai-selected {
   cursor: auto;
   pointer-events: none;
 }
 
-.current-month {
+.ai-current-month {
   background-color: #ffffff;
 }
 
-.faded {
+.ai-faded {
   background: #f0f1f7;
 }

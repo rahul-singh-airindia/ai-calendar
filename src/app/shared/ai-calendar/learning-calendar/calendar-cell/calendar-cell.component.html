@@ -1,16 +1,20 @@
 <div
-  class="month-date"
+  class="ai-month-date"
   [ngClass]="{
-    today: isToday(date),
-    selected: isSelected,
-    'current-month': isCurrentMonth(date)
+    'ai-today': isToday(date),
+    'ai-calendar-header-month': isCurrentMonth(date)
   }"
 >
-  <div class="date">
+  <div
+    class="ai-date"
+    [ngClass]="{
+      selected: isSelected
+    }"
+  >
     {{ date.getDate() }}
   </div>
 
-  <div *ngIf="getEventCount(date) > 1" class="more" (click)="toggleDialog()">
-    +{{ getEventCount(date) - 1 }} more
+  <div *ngIf="getEventCount(date) > 0" class="ai-event">
+    <span class="ai-circle"></span>
   </div>
 </div>

@@ -1,6 +1,6 @@
 @use "../../styles.scss";
 
-.event {
+.ai-event {
   display: flex;
   align-items: center;
   gap: styles.px2em(20px);
@@ -12,13 +12,13 @@
   cursor: pointer;
   border-radius: 0 styles.$border-radius-sm styles.$border-radius-sm 0;
 
-  .title {
+  .ai-title {
     font-size: styles.$font-size-xs;
     font-weight: 700;
     line-height: styles.px2em(15px);
   }
 
-  .content {
+  .ai-content {
     overflow: hidden;
     font-size: styles.$font-size-xxs;
     font-weight: 600;
@@ -27,39 +27,39 @@
     letter-spacing: styles.px2em(0.04px);
   }
 
-  .title,
-  .content {
+  .ai-title,
+  .ai-content {
     white-space: nowrap;
   }
 }
 
-.event.leave {
+.ai-event.ai-leave {
   background-color: map-get(styles.$global-colours, ai-blue, b50);
   border-left: 2px solid map-get(styles.$global-colours, ai-blue, b600);
 
-  .title {
+  .ai-title {
     color: map-get(styles.$global-colours, ai-blue, b800);
   }
 
-  .content {
+  .ai-content {
     color: map-get(styles.$text, text-subtle);
   }
 }
 
-.event.holiday {
+.ai-event.ai-holiday {
   background-color: #f4e9f4;
   border-left: 2px solid map-get(styles.$global-colours, ai-purple, p600);
 
-  .title {
+  .ai-title {
     color: map-get(styles.$global-colours, ai-purple, p600);
   }
 
-  .content {
+  .ai-content {
     color: map-get(styles.$text, text-subtle);
   }
 }
 
-.more {
+.ai-more {
   position: absolute;
   bottom: styles.px2em(5px);
   font-size: styles.$font-size-xxs;

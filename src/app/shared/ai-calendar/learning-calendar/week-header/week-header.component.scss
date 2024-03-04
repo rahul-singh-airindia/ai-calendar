@@ -1,22 +1,24 @@
-.week-header {
+@use "../../styles.scss";
+
+.ai-week-header {
   display: flex;
   align-items: flex-start;
   align-self: stretch;
-}
 
-.week-day {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  flex: 1 0 0;
-  padding: 8px;
-  background: #fff;
-  border-bottom: 1px solid #d7d8e1;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 15px;
-  color: #595b6b;
-  text-align: center;
+  .ai-week-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: styles.px2em(10px);
+    flex: 0 0 styles.px2em(34.5px);
+    padding: styles.$padding-sm;
+    background: map-get(styles.$surface, surface-default);
+    border-bottom: 1px solid map-get(styles.$stroke, stroke-default);
+    font-size: styles.$font-size-xs;
+    font-style: normal;
+    font-weight: 700;
+    line-height: styles.px2em(15px);
+    color: map-get(styles.$text, text-subtle);
+    text-align: center;
+  }
 }

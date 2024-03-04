@@ -1,6 +1,6 @@
 @use "../../styles.scss";
 
-.calendar-grid {
+.ai-calendar-grid {
   width: 100%;
   overflow: scroll;
   border-top: 1px solid map-get(styles.$surface, surface-default);

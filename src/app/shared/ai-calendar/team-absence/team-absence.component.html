@@ -1,5 +1,5 @@
 <div
-  class="team-absence"
+  class="ai-team-absence"
   [ngStyle]="{
     'font-family': fontFamily,
     'font-size': scale + 'em',
@@ -7,11 +7,11 @@
     height: height
   }"
 >
-  <div class="list">
+  <div class="ai-list">
     <resource-list [resourceData]="resourceData"></resource-list>
   </div>
 
-  <div class="calendar">
+  <div class="ai-calendar">
     <header-toolbar
       [currentDate]="currentDate"
       (previousMonth)="previousMonth()"

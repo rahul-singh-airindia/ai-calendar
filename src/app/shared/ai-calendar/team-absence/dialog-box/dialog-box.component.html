@@ -1,9 +1,13 @@
-<div class="dialog-container" *ngIf="isDialogVisible" (click)="toggleDialog()">
-  <div class="dialog-box" (click)="handleDialogClick($event)">
-    <div class="dialog-header">
-      <div class="dialog-title">{{ date.toDateString() }}</div>
+<div
+  class="ai-dialog-container"
+  *ngIf="isDialogVisible"
+  (click)="toggleDialog()"
+>
+  <div class="ai-dialog-box" (click)="handleDialogClick($event)">
+    <div class="ai-dialog-header">
+      <div class="ai-dialog-title">{{ date.toDateString() }}</div>
 
-      <button class="close-button" (click)="toggleDialog()">
+      <button class="ai-close-button" (click)="toggleDialog()">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -26,16 +30,16 @@
       </button>
     </div>
 
-    <div class="dialog-content">
+    <div class="ai-dialog-content">
       <div
         *ngFor="let event of resourceEvents"
-        class="event {{ event.title.toLowerCase() }}"
+        class="ai-event ai-{{ event.title.toLowerCase() }}"
       >
-        <span class="title">
+        <span class="ai-title">
           {{ event.title }}
         </span>
 
-        <span class="content">
+        <span class="ai-content">
           {{ event.extendedProps.holidayLeaveName }}
         </span>
       </div>

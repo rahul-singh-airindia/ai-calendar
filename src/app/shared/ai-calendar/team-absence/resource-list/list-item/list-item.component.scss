@@ -1,6 +1,6 @@
 @use "../../../styles.scss";
 
-.resource-container {
+.ai-resource-container {
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -10,7 +10,7 @@
   background-color: map-get(styles.$surface, surface-default);
   border-top: styles.px2em(1px) solid map-get(styles.$stroke, stroke-subtle);
 
-  .image {
+  .ai-image {
     @include styles.no-user-select;
     display: flex;
     justify-content: center;
@@ -22,7 +22,7 @@
     background-color: map-get(styles.$global-colours, ai-blue, b600);
     border-radius: styles.$radius-rounded;
 
-    .text {
+    .ai-text {
       font-size: styles.$font-size-default;
       font-style: normal;
       font-weight: 500;
@@ -32,7 +32,7 @@
     }
   }
 
-  .title {
+  .ai-title {
     font-size: styles.$font-size-default;
     font-style: normal;
     font-weight: 400;

@@ -1,6 +1,6 @@
 @use "../../styles.scss";
 
-.header-toolbar {
+.ai-header-toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,12 +10,12 @@
   background-color: map-get(styles.$surface, surface-default);
   z-index: 1;
 
-  .toolbar-chunk {
+  .ai-toolbar-chunk {
     display: flex;
     align-items: center;
     gap: styles.px2em(20px);
 
-    .btn {
+    .ai-btn {
       padding: styles.$padding-sm;
       cursor: pointer;
       border: none;
@@ -27,20 +27,20 @@
       border-radius: 50%;
     }
 
-    .btn.active,
-    .btn:hover {
+    .ai-btn.active,
+    .ai-btn:hover {
       background-color: map-get(styles.$global-colours, ai-purple, p800);
       color: map-get(styles.$text, text-on-dark);
     }
 
-    .btn.active svg,
-    .btn:hover svg {
+    .ai-btn.active svg,
+    .ai-btn:hover svg {
       fill: map-get(styles.$text, text-on-dark) !important;
       background-color: map-get(styles.$global-colours, ai-purple, p800);
     }
   }
 
-  .toolbar-title {
+  .ai-toolbar-title {
     font-size: styles.$font-size-md;
     font-style: normal;
     font-weight: 700;

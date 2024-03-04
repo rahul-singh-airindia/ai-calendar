@@ -1,11 +1,13 @@
 <div
+  class="ai-learning-calendar"
   [ngStyle]="{
+    'font-family': fontFamily,
+    'font-size': scale + 'em',
     width: width,
-    height: height,
-    overflow: 'scroll'
+    height: height
   }"
 >
-  <div class="calendar-header">
+  <div class="ai-calendar-header">
     <header-toolbar
       [currentDate]="currentDate"
       (previousMonth)="previousMonth()"

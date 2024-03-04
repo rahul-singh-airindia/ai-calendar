@@ -1,23 +1,23 @@
 <div
   *ngIf="checkValidEvent(date, resource.id)"
-  class="event {{ getResourceTitle(date, resource.id).toLowerCase() }}"
+  class="ai-event ai-{{ getResourceTitle(date, resource.id).toLowerCase() }}"
   [ngStyle]="{
     width: getEventTileWidth(date, resource.id)
   }"
   (click)="toggleDialog()"
 >
-  <span class="title">
+  <span class="ai-title">
     {{ getResourceTitle(date, resource.id) }}
   </span>
 
-  <span class="content">
+  <span class="ai-content">
     {{ getResourceContent(date, resource.id) }}
   </span>
 </div>
 
 <div
   *ngIf="getResourceEventsCount(date, resource.id) > 1"
-  class="more"
+  class="ai-more"
   (click)="toggleDialog()"
 >
   &#xFF0B;{{ getResourceEventsCount(date, resource.id) - 1 }} more

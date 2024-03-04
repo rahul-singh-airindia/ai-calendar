@@ -1,11 +1,11 @@
-<div class="days">
+<div class="ai-days">
   <calendar-cell
     *ngFor="let day of days"
-    class="day"
+    class="ai-day"
     [ngClass]="{
-      selected: day.isSelected,
-      faded: [0, 6].includes(day.date.getDay()),
-      'current-month': isCurrentMonth(day.date)
+      'ai-selected': day.isSelected,
+      'ai-faded': [0, 6].includes(day.date.getDay()),
+      'ai-current-month': isCurrentMonth(day.date)
     }"
     [date]="day.date"
     [currentDate]="currentDate"

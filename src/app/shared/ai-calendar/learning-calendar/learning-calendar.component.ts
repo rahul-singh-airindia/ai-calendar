@@ -8,10 +8,14 @@ import { Day } from '../interface/day.model';
   styleUrls: ['./learning-calendar.component.scss'],
 })
 export class LearningCalendarComponent implements OnInit {
+  @Input('font-family')
+  fontFamily: string = '"Nunito Sans", sans-serif';
   @Input('width')
   width: string = '';
   @Input('height')
   height: string = '';
+  @Input('scale')
+  scale: number = 1;
 
   @Input('learningCalendar')
   learningCalendar: LearningCalendarData[] = [];

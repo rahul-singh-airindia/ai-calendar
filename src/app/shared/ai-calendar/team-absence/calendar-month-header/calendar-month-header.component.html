@@ -1,19 +1,19 @@
-<div class="month-header">
+<div class="ai-month-header">
   <div
-    class="day"
+    class="ai-day"
     [ngClass]="{
-      today: isToday(day.date),
-      active: day.isSelected,
-      faded: [0, 6].includes(day.date.getDay())
+      'ai-today': isToday(day.date),
+      'ai-active': day.isSelected,
+      'ai-faded': [0, 6].includes(day.date.getDay())
     }"
     *ngFor="let day of getCurrentMonthDays()"
     (click)="handleSelectDay(day)"
   >
-    <span class="day-date">
+    <span class="ai-day-date">
       {{ day.date.getDate() }}
     </span>
 
-    <span class="day-name">
+    <span class="ai-day-name">
       {{ day.date.toLocaleDateString("en-US", { weekday: "short" }) }}
     </span>
   </div>

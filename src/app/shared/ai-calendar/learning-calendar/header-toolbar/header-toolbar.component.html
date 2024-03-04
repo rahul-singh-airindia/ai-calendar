@@ -1,5 +1,5 @@
-<div class="header-toolbar">
-  <div class="toolbar-title">
+<div class="ai-header-toolbar">
+  <div class="ai-toolbar-title">
     {{
       currentDate.toLocaleDateString("en-US", {
         month: "long",
@@ -8,8 +8,8 @@
     }}
   </div>
 
-  <div class="btn-group">
-    <button class="btn btn-secondary rounded" (click)="handlePreviousMonth()">
+  <div class="ai-btn-group">
+    <button class="ai-btn" (click)="handlePreviousMonth()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -31,7 +31,7 @@
       </svg>
     </button>
 
-    <button class="btn btn-secondary rounded" (click)="handleNextMonth()">
+    <button class="ai-btn" (click)="handleNextMonth()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"

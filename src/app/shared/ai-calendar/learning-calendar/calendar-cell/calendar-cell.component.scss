@@ -1,30 +1,40 @@
-.month-date {
+@use "../../styles.scss";
+
+.ai-month-date {
   cursor: pointer;
-}
 
-.selected {
-  display: flex;
-  width: 24px;
-  height: 24px;
-  padding: 4px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: #531251;
-}
+  .ai-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: map-get(styles.$text, text-subtle);
+    font-size: styles.$font-size-sm;
+    font-style: normal;
+    font-weight: 400;
+    line-height: styles.px2em(19.6px);
+    letter-spacing: styles.px2em(0.035px);
+  }
 
-.date {
-  color: #595b6b;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 19.6px;
-  letter-spacing: 0.035px;
-}
+  .ai-date.ai-selected {
+    width: styles.px2em(21px);
+    height: styles.px2em(21px);
+    padding: styles.$padding-xs;
+    background-color: map-get(styles.$global-colours, ai-purple, p800);
+    border-radius: 50%;
+    color: map-get(styles.$text, text-on-dark);
+  }
 
-.selected .date {
-  color: #ffffff;
+  .ai-event {
+    text-align: center;
+    .ai-circle {
+      translate: -50% 50%;
+      display: inline-block;
+      position: absolute;
+      bottom: 5px;
+      width: styles.px2em(6px);
+      height: styles.px2em(6px);
+      background-color: map-get(styles.$global-colours, ai-purple, p800);
+      border-radius: 50%;
+    }
+  }
 }

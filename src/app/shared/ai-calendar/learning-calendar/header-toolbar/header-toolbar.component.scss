@@ -1,38 +1,37 @@
-.header-toolbar {
+@use "../../styles.scss";
+
+.ai-header-toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
-  padding: 24px 24px 16px 24px;
-  background-color: #ffffff;
-}
+  padding: styles.$padding-md styles.$padding-md styles.$padding-default
+    styles.$padding-md;
+  background-color: map-get(styles.$surface, surface-default);
 
-.toolbar-title {
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 22.5px;
-}
+  .ai-toolbar-title {
+    font-size: styles.$font-size-md;
+    font-style: normal;
+    font-weight: 700;
+    line-height: styles.px2em(22.5px);
+  }
 
-.btn {
-  padding: 8px;
-  cursor: pointer;
-  border: none;
-  font-weight: bold;
-}
-
-.btn-secondary {
-  width: 32px;
-  height: 32px;
-  background-color: #f0f1f7;
-  color: #531251;
-}
-
-.btn-group {
-  display: flex;
-  gap: 8px;
-}
-
-.rounded {
-  border-radius: 50%;
+  .ai-btn-group {
+    display: flex;
+    gap: styles.px2em(8px);
+    .ai-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: styles.px2em(32px);
+      height: styles.px2em(32px);
+      padding: styles.$padding-sm;
+      background-color: map-get(styles.$global-colours, ai-grey, g200);
+      cursor: pointer;
+      border: none;
+      border-radius: 50%;
+      font-weight: bold;
+      color: map-get(styles.$global-colours, ai-purple, p800);
+    }
+  }
 }

@@ -7,6 +7,8 @@ import { LearningCalendarData } from '../../interface/learning-calendar/learning
   styleUrls: ['./calendar-cell.component.scss'],
 })
 export class CalendarCellComponent implements OnInit {
+  @Input('device')
+  device = 'desktop';
   @Input('date')
   date: Date = new Date();
   @Input('currentDate')
@@ -45,16 +47,5 @@ export class CalendarCellComponent implements OnInit {
 
   getEventCount(date: Date): number {
     return this.dateEventMap.get(date.toLocaleDateString())?.length || 0;
-  }
-
-  getEvent(date: Date): LearningCalendarData {
-    return (
-      this.dateEventMap.get(date.toLocaleDateString())?.[0] ||
-      ({} as LearningCalendarData)
-    );
-  }
-
-  getEvents(date: Date): LearningCalendarData[] {
-    return this.dateEventMap.get(date.toLocaleDateString()) || [];
   }
 }
