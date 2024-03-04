@@ -33,8 +33,8 @@ export class TeamAbsenceComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.resourceData = this.resourceData;
-    this.teamLeavesHolidayData = this.teamLeavesHolidayData;
+    this.resourceData = this.resource;
+    this.teamLeavesHolidayData = this.teamLeavesHoliday;
     this.generateCalendar(this.currentDate);
   }
 
