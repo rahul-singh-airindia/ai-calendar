@@ -16,8 +16,8 @@
   }
 
   .ai-date.ai-selected {
-    width: styles.px2em(28px);
-    height: styles.px2em(28px);
+    width: styles.px2em(21px);
+    height: styles.px2em(21px);
     padding: styles.$padding-xs;
     background-color: map-get(styles.$global-colours, ai-purple, p800);
     border-radius: 50%;

@@ -1,25 +1,27 @@
-<div
-  class="ai-learning-calendar"
-  [ngStyle]="{
-    'font-family': fontFamily,
-    width: width,
-    height: height
-  }"
->
-  <div class="ai-calendar-header">
-    <header-toolbar
+<div class="ai-learning-calendar-container">
+  <div
+    class="ai-learning-calendar"
+    [ngStyle]="{
+      'font-family': fontFamily,
+      width: width,
+      height: height
+    }"
+  >
+    <div class="ai-calendar-header">
+      <header-toolbar
+        [currentDate]="currentDate"
+        (previousMonth)="previousMonth()"
+        (nextMonth)="nextMonth()"
+      ></header-toolbar>
+
+      <week-header></week-header>
+    </div>
+
+    <calendar-grid
+      [days]="days"
       [currentDate]="currentDate"
-      (previousMonth)="previousMonth()"
-      (nextMonth)="nextMonth()"
-    ></header-toolbar>
-
-    <week-header></week-header>
+      [dateEventMap]="dateEventMap"
+      (selectDay)="selectDay($event)"
+    ></calendar-grid>
   </div>
-
-  <calendar-grid
-    [days]="days"
-    [currentDate]="currentDate"
-    [dateEventMap]="dateEventMap"
-    (selectDay)="selectDay($event)"
-  ></calendar-grid>
 </div>

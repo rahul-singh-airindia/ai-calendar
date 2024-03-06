@@ -1,0 +1,12 @@
+@use '../styles.scss';
+
+.ai-bidding-calendar {
+  .ai-calendar-header {
+    position: sticky;
+    top: 0;
+    background-color: map-get(styles.$surface, surface-default);
+    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.05);
+    z-index: 2;
+    min-width: max-content;
+  }
+}

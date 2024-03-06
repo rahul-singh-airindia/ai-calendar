@@ -4,42 +4,48 @@
     "message": "SUCCESS",
     "errors": null
   },
-  "data": {
-    "courseData": [
-      {
-        "programName": "Project Management Professional",
-        "programDescription": [
-          "The PMP certification provides a thorough understanding of project management principles, processes, and methodologies.",
-          "It equips professionals with the skills to lead and direct projects effectively, ensuring successful outcomes and stakeholder satisfaction.",
-          "Upholding ethical standards and professional conduct is integral to maintaining the credibility and integrity of the PMP certification."
-        ],
-        "programCategory": "Leadership",
-        "approval": "This course needs manager approval",
-        "programLocation": "Gurugram",
-        "trainerName": "By PMI",
-        "courseDate": "July 10, 2024",
-        "courseTime": "10:00 AM",
-        "seatLeft": 5,
-        "daysLeft": 5,
-        "approvalRequired": "yes"
-      },
-      {
-        "programName": "Project Management Professional",
-        "programDescription": [
-          "The PMP certification provides a thorough understanding of project management principles, processes, and methodologies.",
-          "It equips professionals with the skills to lead and direct projects effectively, ensuring successful outcomes and stakeholder satisfaction.",
-          "Upholding ethical standards and professional conduct is integral to maintaining the credibility and integrity of the PMP certification."
-        ],
-        "programCategory": "Leadership",
-        "approval": "This course needs manager approval",
-        "programLocation": "Gurugram",
-        "trainerName": "By PMI",
-        "courseDate": "July 15, 2024",
-        "courseTime": "12:00 AM",
-        "seatLeft": 5,
-        "daysLeft": 5,
-        "approvalRequired": "No"
-      }
-    ]
-  }
+  "data": [
+    {
+      "date": "2024-03-06",
+      "programName": "Project Management Professional",
+      "trainerName": "By PMI",
+      "programDescription": "The PMP certification provides a thorough understanding of project management principles, processes, and methodologies. It equips professionals with the skills to lead and direct projects effectively, ensuring successful outcomes and stakeholder satisfaction. Upholding ethical standards and professional conduct is integral to maintaining the credibility and integrity of the PMP certification.",
+      "programCategory": "Functional",
+      "approvalStatus": "Pending",
+      "programLocation": "Gurugram, India",
+      "courseTime": "10 AM",
+      "courseDuration": "1",
+      "courseStatus": "5",
+      "courseId": 123456,
+      "approvalRequired": null
+    },
+    {
+      "date": "2024-03-06",
+      "programName": "Lean Six Sigma",
+      "trainerName": "By Prof. Def",
+      "programDescription": "Lean and Six Sigma Methodologies: Understand the principles, tools,and techniques of Lean and Six Sigma. Process Improvement: Learn to identify and eliminate process inefficiencies and defects. Decision-Making: Utilize statistical analysis to make data-driven decisions.Certification: Achieve Lean Six Sigma Green Belt certification upon successful completion",
+      "programCategory": "Technical",
+      "approvalStatus": "Not Enrolled",
+      "programLocation": "Kochi, India",
+      "courseTime": "11AM",
+      "courseDuration": "2",
+      "courseStatus": "5",
+      "courseId": 123452,
+      "approvalRequired": null
+    },
+    {
+      "date": "2024-03-06",
+      "programName": "Situational Leadership II",
+      "trainerName": "By Prof. XYZ",
+      "programDescription": "Establishes a shared process, language and a model for leadership development. Ensures goal alignment and effective performance monitoring, core leadership skills, thereby leading to improved retention, productivity, and communication",
+      "programCategory": "Leadership",
+      "approvalStatus": "Enrolled",
+      "programLocation": "Delhi, India",
+      "courseTime": "5PM-6PM",
+      "courseDuration": "1",
+      "courseStatus": "5",
+      "courseId": 123457,
+      "approvalRequired": null
+    }
+  ]
 }

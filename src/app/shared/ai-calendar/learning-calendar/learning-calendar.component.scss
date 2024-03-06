@@ -1,12 +1,24 @@
 @use "../styles.scss";
 
-.ai-learning-calendar {
-  .ai-calendar-header {
-    position: sticky;
-    top: 0;
-    background-color: map-get(styles.$surface, surface-default);
-    box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.05);
-    z-index: 2;
-    min-width: max-content;
+.ai-learning-calendar-container {
+  display: flex;
+
+  .ai-learning-calendar {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;
+    overflow: hidden;
+
+    &:hover {
+      overflow: scroll;
+    }
+
+    .ai-calendar-header {
+      position: sticky;
+      top: 0;
+      background-color: map-get(styles.$surface, surface-default);
+      box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
   }
 }

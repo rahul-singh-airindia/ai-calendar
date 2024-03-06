@@ -1,0 +1,20 @@
+<div
+  class="ai-month-date"
+  [ngClass]="{
+    'ai-today': isToday(date),
+    'ai-calendar-header-month': isCurrentMonth(date)
+  }"
+>
+  <div
+    class="ai-date"
+    [ngClass]="{
+      'ai-selected': isSelected
+    }"
+  >
+    {{ date.getDate() }}
+  </div>
+
+  <div *ngIf="getEventCount(date) > 0" class="ai-event">
+    <span class="ai-circle"></span>
+  </div>
+</div>
