@@ -40,7 +40,7 @@ export class BiddingCalendarComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.resource) {
+    if (changes.biddingCalendar) {
       this.biddingCalendarData = changes.biddingCalendar.currentValue;
       this.generateCalendar(this.currentDate);
       this.cdr.detectChanges();
@@ -57,7 +57,7 @@ export class BiddingCalendarComponent implements OnInit {
       const previousMonthDay = new Date(
         date.getFullYear(),
         date.getMonth() - 1,
-        pastMonthLastDay.getDate() - i,
+        pastMonthLastDay.getDate() - i
       );
 
       this.days.unshift({
@@ -126,7 +126,7 @@ export class BiddingCalendarComponent implements OnInit {
     this.currentDate = new Date(
       this.currentDate.getFullYear(),
       this.currentDate.getMonth() - 1,
-      1,
+      1
     );
 
     this.generateCalendar(this.currentDate);
@@ -136,7 +136,7 @@ export class BiddingCalendarComponent implements OnInit {
     this.currentDate = new Date(
       this.currentDate.getFullYear(),
       this.currentDate.getMonth() + 1,
-      1,
+      1
     );
 
     this.generateCalendar(this.currentDate);

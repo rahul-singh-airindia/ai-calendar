@@ -43,7 +43,7 @@ export class HolidayCalendarComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.resource) {
+    if (changes.leaveHoliday) {
       this.leaveHolidayData = changes.leaveHoliday.currentValue;
       this.generateCalendar(this.currentDate);
       this.cdr.detectChanges();

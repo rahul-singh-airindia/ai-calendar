@@ -51,7 +51,7 @@ export class LearningCalendarComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.resource) {
+    if (changes.learningCalendar) {
       this.learningCalendarData = changes.learningCalendar.currentValue;
       this.generateCalendar(this.currentDate);
       this.cdr.detectChanges();
