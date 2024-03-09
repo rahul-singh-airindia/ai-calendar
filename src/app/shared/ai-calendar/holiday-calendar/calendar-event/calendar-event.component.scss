@@ -40,7 +40,8 @@
   }
 }
 
-.ai-event.ai-desktop.ai-pending {
+.ai-event.ai-desktop.ai-pending,
+.ai-event.ai-desktop.ai-pending-cancellation {
   background-color: map-get(styles.$global-colours, ai-orange, o50);
   border-left: 2px solid map-get(styles.$global-colours, ai-orange, o500);
   color: map-get(styles.$global-colours, ai-orange, o500);

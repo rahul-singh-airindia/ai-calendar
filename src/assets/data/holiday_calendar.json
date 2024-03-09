@@ -9,6 +9,18 @@
     "upcomingHolidayLeavesCalendarView": [
       {
         "title": "Leave",
+        "start": "2024-03-06",
+        "end": "2024-03-06",
+        "extendedProps": {
+          "holidayLeaveName": "Casual Leave",
+          "duration": "1",
+          "status": "Pending Cancellation",
+          "month": "Feb",
+          "day": "Tue"
+        }
+      },
+      {
+        "title": "Leave",
         "start": "2024-03-20",
         "end": "2024-03-26",
         "extendedProps": {
@@ -86,7 +98,7 @@
         "extendedProps": {
           "holidayLeaveName": "Sick Leave",
           "duration": "1",
-          "status": "PENDING",
+          "status": "APPROVED",
           "month": "Feb",
           "day": "Mon"
         }
