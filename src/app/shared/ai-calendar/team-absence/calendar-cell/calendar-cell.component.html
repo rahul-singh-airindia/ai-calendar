@@ -23,10 +23,10 @@
   &#xFF0B;{{ getResourceEventsCount(date, resource.id) - 1 }} more
 </div>
 
-<dialog-box
+<app-dialog-box
   *ngIf="checkValidEvent(date, resource.id)"
   [date]="date"
   [resourceEvents]="getResourceEvents(date, resource.id)"
   [isDialogVisible]="isDialogVisible"
-  (toggleDialog)="toggleDialog()"
-></dialog-box>
+  (toggleDialogHandler)="toggleDialog()"
+></app-dialog-box>

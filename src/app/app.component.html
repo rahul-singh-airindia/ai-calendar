@@ -1,24 +1,24 @@
-<!-- <team-absence
+<app-calendar-team-absence
   [width]="'100vw'"
   [height]="'100vh'"
   [scale]="1"
   [resource]="resource"
   [teamLeavesHoliday]="teamLeavesHoliday"
-></team-absence> -->
+></app-calendar-team-absence>
 
-<!-- <holiday-calendar
+<app-calendar-holiday-calendar
   [device]="'desktop'"
   [scale]="1"
   [width]="'100vw'"
   [height]="'100vh'"
   [leaveHoliday]="leaveHoliday.data.upcomingHolidayLeavesCalendarView"
-></holiday-calendar> -->
+></app-calendar-holiday-calendar>
 
-<learning-calendar
-  [width]="'50vw'"
-  [height]="'50vh'"
-  [currentDate]="'2024-03-20'"
+<app-calendar-learning-calendar
+  [width]="'100vw'"
+  [height]="'100vh'"
+  [currentDateString]="'2024-03-20'"
   [learningCalendar]="learningCalendar"
-  (selectedDate)="handleSelectedDate($event)"
-  (changedMonth)="handleChangedMonth($event)"
-></learning-calendar>
+  (getSelectedDate)="handleSelectedDate($event)"
+  (getChangedMonth)="handleChangedMonth($event)"
+></app-calendar-learning-calendar>

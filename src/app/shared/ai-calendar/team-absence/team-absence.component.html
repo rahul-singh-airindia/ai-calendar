@@ -8,20 +8,20 @@
   }"
 >
   <div class="ai-list">
-    <resource-list [resourceData]="resourceData"></resource-list>
+    <app-resource-list [resourceData]="resourceData"></app-resource-list>
   </div>
 
   <div class="ai-calendar">
-    <header-toolbar
+    <app-header-toolbar
       [currentDate]="currentDate"
       (previousMonth)="previousMonth()"
       (nextMonth)="nextMonth()"
-    ></header-toolbar>
+    ></app-header-toolbar>
 
-    <calendar
+    <app-calendar
       [days]="days"
       [resourceData]="resourceData"
       [dateEventMap]="dateEventMap"
-    ></calendar>
+    ></app-calendar>
   </div>
 </div>

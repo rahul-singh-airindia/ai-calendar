@@ -5,7 +5,7 @@
     </span>
   </div>
 
-  <calendar-cell
+  <app-calendar-cell
     *ngFor="let day of days"
     class="ai-day"
     [ngClass]="{
@@ -16,5 +16,5 @@
     [date]="day.date"
     [currentDate]="currentDate"
     [dateEventMap]="dateEventMap"
-  ></calendar-cell>
+  ></app-calendar-cell>
 </div>

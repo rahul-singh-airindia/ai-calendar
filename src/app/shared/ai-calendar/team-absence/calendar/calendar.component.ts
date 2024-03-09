@@ -1,24 +1,22 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Day } from '../../interface/day.model';
 import { ResourceData } from '../../interface/team-absence/resource-data.interface';
 import { TeamLeaveHolidayData } from '../../interface/team-absence/team-leave-holiday.interface';
 
 @Component({
-  selector: 'calendar',
+  selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
 })
-export class CalendarComponent implements OnInit {
-  @Input('days')
+export class CalendarComponent {
+  @Input()
   days: Day[] = [];
-  @Input('resourceData')
+
+  @Input()
   resourceData: ResourceData[] = [];
-  @Input('dateEventMap')
+
+  @Input()
   dateEventMap: Map<string, Map<string, TeamLeaveHolidayData[]>> = new Map();
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   getDaysInCurrentMonth(): Day[] {
     return this.days.filter((day) => day.isCurrentMonth);

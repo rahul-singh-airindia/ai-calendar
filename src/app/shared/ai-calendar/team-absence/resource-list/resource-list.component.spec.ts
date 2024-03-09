@@ -8,9 +8,9 @@ describe('ResourceListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResourceListComponent ]
+      declarations: [ResourceListComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

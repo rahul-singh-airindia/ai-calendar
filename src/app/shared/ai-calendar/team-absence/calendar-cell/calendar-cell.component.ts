@@ -1,25 +1,23 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TeamLeaveHolidayData } from '../../interface/team-absence/team-leave-holiday.interface';
 import { ResourceData } from '../../interface/team-absence/resource-data.interface';
 
 @Component({
-  selector: 'calendar-cell',
+  selector: 'app-calendar-cell',
   templateUrl: './calendar-cell.component.html',
   styleUrls: ['./calendar-cell.component.scss'],
 })
-export class CalendarCellComponent implements OnInit {
-  @Input('date')
+export class CalendarCellComponent {
+  @Input()
   date: Date = new Date();
-  @Input('resource')
+
+  @Input()
   resource: ResourceData = {} as ResourceData;
-  @Input('dateEventMap')
+
+  @Input()
   dateEventMap: Map<string, Map<string, TeamLeaveHolidayData[]>> = new Map();
 
   isDialogVisible = false;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   toggleDialog() {
     this.isDialogVisible = !this.isDialogVisible;
@@ -65,7 +63,7 @@ export class CalendarCellComponent implements OnInit {
     if (!dateEvents) return 1;
     const resourceEvents = dateEvents?.get(resource);
     if (!resourceEvents) return 1;
-    return parseInt(resourceEvents[0].extendedProps.duration);
+    return parseInt(resourceEvents[0].extendedProps.duration, 10);
   }
 
   checkValidEvent(date: Date, resource: string) {
@@ -83,7 +81,6 @@ export class CalendarCellComponent implements OnInit {
 
   getEventTileWidth(date: Date, resourceId: string): string {
     const eventDuration = this.getResourceDuration(date, resourceId);
-    const emValue = this.px2em(eventDuration * 48 - 27);
-    return emValue + 'em';
+    return `${eventDuration * 100 - 17}%`;
   }
 }

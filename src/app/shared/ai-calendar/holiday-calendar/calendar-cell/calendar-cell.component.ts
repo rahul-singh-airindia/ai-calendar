@@ -1,26 +1,25 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { LeaveHolidayData } from '../../interface/holiday-calendar/leave-holiday.interface';
 
 @Component({
-  selector: 'calendar-cell',
+  selector: 'app-calendar-cell',
   templateUrl: './calendar-cell.component.html',
   styleUrls: ['./calendar-cell.component.scss'],
 })
-export class CalendarCellComponent implements OnInit {
-  @Input('device')
+export class CalendarCellComponent {
+  @Input()
   device: string = 'desktop';
-  @Input('date')
+
+  @Input()
   date: Date = new Date();
-  @Input('currentDate')
+
+  @Input()
   currentDate: Date = new Date();
-  @Input('dateEventMap')
+
+  @Input()
   dateEventMap: Map<string, LeaveHolidayData[]> = new Map();
 
   isDialogVisible = false;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   toggleDialog() {
     this.isDialogVisible = !this.isDialogVisible;
@@ -30,9 +29,9 @@ export class CalendarCellComponent implements OnInit {
     const today = new Date();
 
     return (
-      date.getDate() === today.getDate() &&
-      date.getMonth() === today.getMonth() &&
-      date.getFullYear() === today.getFullYear()
+      date.getDate() === today.getDate()
+      && date.getMonth() === today.getMonth()
+      && date.getFullYear() === today.getFullYear()
     );
   }
 
@@ -42,8 +41,8 @@ export class CalendarCellComponent implements OnInit {
 
   getEvent(date: Date): LeaveHolidayData {
     return (
-      this.dateEventMap.get(date.toLocaleDateString())?.[0] ||
-      ({} as LeaveHolidayData)
+      this.dateEventMap.get(date.toLocaleDateString())?.[0]
+      || ({} as LeaveHolidayData)
     );
   }
 

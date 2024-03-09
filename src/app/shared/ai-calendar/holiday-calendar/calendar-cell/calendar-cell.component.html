@@ -20,17 +20,18 @@
   +{{ getEventCount(date) - 1 }} <span *ngIf="device === 'desktop'">more</span>
 </div>
 
-<calendar-event
+<app-calendar-event
   *ngIf="getEventCount(date) > 0"
   [device]="device"
+  [date]="date"
   [leaveHolidayData]="getEvent(date)"
   (click)="toggleDialog()"
-></calendar-event>
+></app-calendar-event>
 
-<dialog-box
+<app-dialog-box
   *ngIf="getEventCount(date) > 0"
   [date]="date"
   [leaveHolidayData]="getEvents(date)"
   [isDialogVisible]="isDialogVisible"
-  (toggleDialog)="toggleDialog()"
-></dialog-box>
+  (toggleDialogHandler)="toggleDialog()"
+></app-dialog-box>

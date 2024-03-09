@@ -1,18 +1,17 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component, EventEmitter, Input, Output,
+} from '@angular/core';
 import { Day } from '../../interface/day.model';
 
 @Component({
-  selector: 'calendar-month-header',
+  selector: 'app-calendar-month-header',
   templateUrl: './calendar-month-header.component.html',
   styleUrls: ['./calendar-month-header.component.scss'],
 })
-export class CalendarMonthHeaderComponent implements OnInit {
+export class CalendarMonthHeaderComponent {
   @Input() days: Day[] = [];
+
   @Output() selectDay = new EventEmitter<Day>();
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   getCurrentMonthDays(): Day[] {
     return this.days.filter((day) => day.isCurrentMonth);
@@ -26,9 +25,9 @@ export class CalendarMonthHeaderComponent implements OnInit {
     const today = new Date();
 
     return (
-      date.getDate() === today.getDate() &&
-      date.getMonth() === today.getMonth() &&
-      date.getFullYear() === today.getFullYear()
+      date.getDate() === today.getDate()
+      && date.getMonth() === today.getMonth()
+      && date.getFullYear() === today.getFullYear()
     );
   }
 }

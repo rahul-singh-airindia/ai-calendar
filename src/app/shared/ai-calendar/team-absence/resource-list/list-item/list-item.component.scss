@@ -4,9 +4,9 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  min-height: styles.px2em(47px);
-  padding: styles.$padding-sm styles.$padding-default;
-  gap: styles.px2em(5px);
+  height: styles.px2em(64px);
+  padding: 0 styles.$padding-default;
+  gap: styles.px2em(8px);
   background-color: map-get(styles.$surface, surface-default);
   border-top: styles.px2em(1px) solid map-get(styles.$stroke, stroke-subtle);
 
@@ -16,14 +16,14 @@
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    width: styles.px2em(12px);
-    height: styles.px2em(12px);
+    width: styles.px2em(32px);
+    height: styles.px2em(32px);
     padding: styles.px2em(10px);
     background-color: map-get(styles.$global-colours, ai-blue, b600);
     border-radius: styles.$radius-rounded;
 
     .ai-text {
-      font-size: styles.$font-size-default;
+      font-size: styles.$font-size-sm;
       font-style: normal;
       font-weight: 500;
       line-height: styles.px2em(17.5px);
@@ -33,7 +33,7 @@
   }
 
   .ai-title {
-    font-size: styles.$font-size-default;
+    font-size: styles.$font-size-sm;
     font-style: normal;
     font-weight: 400;
     line-height: styles.px2em(19.6px);

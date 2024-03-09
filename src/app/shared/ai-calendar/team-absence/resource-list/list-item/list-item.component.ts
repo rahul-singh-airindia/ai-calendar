@@ -1,15 +1,17 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ResourceData } from '../../../interface/team-absence/resource-data.interface';
 
 @Component({
-  selector: 'resource-list-item',
+  selector: 'app-resource-list-item',
   templateUrl: './list-item.component.html',
   styleUrls: ['./list-item.component.scss'],
 })
-export class ResourceListItemComponent implements OnInit {
-  @Input('resource') resource: ResourceData = {} as ResourceData;
-  @Input('itemName') data: string = '';
-  @Input('isCollapsible') isCollapsible: boolean = false;
+export class ResourceListItemComponent {
+  @Input()
+  resource: ResourceData = {} as ResourceData;
+
+  @Input()
+  isCollapsible: boolean = false;
 
   isCollapsed = true;
 
@@ -33,8 +35,4 @@ export class ResourceListItemComponent implements OnInit {
       this.isCollapsed = !this.isCollapsed;
     }
   }
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

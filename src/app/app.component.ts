@@ -11,10 +11,15 @@ import { LearningCalendarData } from './shared/ai-calendar/interface/learning-ca
 })
 export class AppComponent {
   title = 'aiCalendar';
+
   teamAbsence = teamAbsenceData;
+
   resource = teamAbsenceData.data.resourceData;
+
   teamLeavesHoliday = teamAbsenceData.data.teamLeavesHolidayData;
+
   leaveHoliday = leaveHolidayData;
+
   learningCalendar: LearningCalendarData[] = learningCalendarData.data;
 
   handleSelectedDate(date: string): void {
@@ -27,7 +32,7 @@ export class AppComponent {
     console.log(
       'changed month: ',
       changedMonth.getMonth() + 1,
-      changedMonth.getFullYear()
+      changedMonth.getFullYear(),
     );
   }
 }

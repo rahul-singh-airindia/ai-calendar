@@ -1,32 +1,31 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Day } from '../../interface/day.model';
 import { LeaveHolidayData } from '../../interface/holiday-calendar/leave-holiday.interface';
 
 @Component({
-  selector: 'calendar-grid',
+  selector: 'app-calendar-grid',
   templateUrl: './calendar-grid.component.html',
   styleUrls: ['./calendar-grid.component.scss'],
 })
-export class CalendarGridComponent implements OnInit {
-  @Input('device')
+export class CalendarGridComponent {
+  @Input()
   device: string = 'desktop';
-  @Input('days')
+
+  @Input()
   days: Day[] = [];
-  @Input('currentDate')
+
+  @Input()
   currentDate: Date = new Date();
-  @Input('dateEventMap')
+
+  @Input()
   dateEventMap: Map<string, LeaveHolidayData[]> = new Map();
 
   weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-  constructor() {}
-
-  ngOnInit(): void {}
-
   isCurrentMonth(date: Date) {
     return (
-      date.getMonth() === this.currentDate.getMonth() &&
-      date.getFullYear() === this.currentDate.getFullYear()
+      date.getMonth() === this.currentDate.getMonth()
+      && date.getFullYear() === this.currentDate.getFullYear()
     );
   }
 }

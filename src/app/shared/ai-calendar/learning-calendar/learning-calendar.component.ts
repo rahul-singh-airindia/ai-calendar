@@ -4,6 +4,7 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnChanges,
   OnInit,
   Output,
   SimpleChanges,
@@ -12,34 +13,41 @@ import { LearningCalendarData } from '../interface/learning-calendar/learning-ca
 import { Day } from '../interface/day.model';
 
 @Component({
-  selector: 'learning-calendar',
+  selector: 'app-calendar-learning-calendar',
   templateUrl: './learning-calendar.component.html',
   styleUrls: ['./learning-calendar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LearningCalendarComponent implements OnInit {
-  @Input('font-family')
+export class LearningCalendarComponent implements OnInit, OnChanges {
+  @Input()
   fontFamily: string = '"Nunito Sans", sans-serif';
-  @Input('width')
+
+  @Input()
   width: string = '';
-  @Input('height')
+
+  @Input()
   height: string = '';
 
-  @Input('currentDate') // yyyy-mm-dd'T'hh:mm:ss'Z'
+  @Input() // yyyy-mm-dd'T'hh:mm:ss'Z'
   currentDateString: string = new Date().toISOString();
-  @Input('learningCalendar')
+
+  @Input()
   learningCalendar: LearningCalendarData[] = [];
+
   learningCalendarData: LearningCalendarData[] = [];
 
-  @Output('selectedDate')
+  @Output()
   getSelectedDate = new EventEmitter<string>();
-  @Output('changedMonth')
+
+  @Output()
   getChangedMonth = new EventEmitter<string>();
 
   currentDate: Date = new Date();
+
   selectedDate: Date = new Date();
 
   days: Day[] = [];
+
   dateEventMap: Map<string, LearningCalendarData[]> = new Map();
 
   constructor(private cdr: ChangeDetectorRef) {}
@@ -60,9 +68,9 @@ export class LearningCalendarComponent implements OnInit {
 
   checkSelectedDate(target: Date, date: Date): boolean {
     return (
-      target.getDate() === date.getDate() &&
-      target.getMonth() === date.getMonth() &&
-      target.getFullYear() === date.getFullYear()
+      target.getDate() === date.getDate()
+      && target.getMonth() === date.getMonth()
+      && target.getFullYear() === date.getFullYear()
     );
   }
 
@@ -76,11 +84,11 @@ export class LearningCalendarComponent implements OnInit {
     const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
     const pastMonthLastDay = new Date(date.getFullYear(), date.getMonth(), 0);
 
-    for (let i = 0; i < firstDay.getDay(); i++) {
+    for (let i = 0; i < firstDay.getDay(); i += 1) {
       const previousMonthDay = new Date(
         date.getFullYear(),
         date.getMonth() - 1,
-        pastMonthLastDay.getDate() - i
+        pastMonthLastDay.getDate() - i,
       );
 
       this.days.unshift({
@@ -91,7 +99,7 @@ export class LearningCalendarComponent implements OnInit {
       });
     }
 
-    for (let i = 1; i <= lastDay.getDate(); i++) {
+    for (let i = 1; i <= lastDay.getDate(); i += 1) {
       const currentDay = new Date(date.getFullYear(), date.getMonth(), i);
       const selected = select && this.checkSelectedDate(currentDay, date);
 
@@ -103,18 +111,18 @@ export class LearningCalendarComponent implements OnInit {
         date: currentDay,
         events: [],
         isSelected:
-          selected ||
-          (!select &&
-            currentDay.getDate() === this.selectedDate.getDate() &&
-            currentDay.getMonth() === this.selectedDate.getMonth() &&
-            currentDay.getFullYear() === this.selectedDate.getFullYear()),
+          selected
+          || (!select
+            && currentDay.getDate() === this.selectedDate.getDate()
+            && currentDay.getMonth() === this.selectedDate.getMonth()
+            && currentDay.getFullYear() === this.selectedDate.getFullYear()),
         isCurrentMonth: true,
       });
     }
 
     const nextMonthFiller = this.days.length;
 
-    for (let i = 1; i <= 42 - nextMonthFiller; i++) {
+    for (let i = 1; i <= 42 - nextMonthFiller; i += 1) {
       const nextMonthDay = new Date(date.getFullYear(), date.getMonth() + 1, i);
 
       this.days.push({
@@ -133,9 +141,9 @@ export class LearningCalendarComponent implements OnInit {
       const courseStart = new Date(course.date);
 
       return (
-        courseStart.getFullYear() === date.getFullYear() &&
-        courseStart.getMonth() === date.getMonth() &&
-        courseStart.getDate() === date.getDate()
+        courseStart.getFullYear() === date.getFullYear()
+        && courseStart.getMonth() === date.getMonth()
+        && courseStart.getDate() === date.getDate()
       );
     });
   }
@@ -153,7 +161,7 @@ export class LearningCalendarComponent implements OnInit {
     this.currentDate = new Date(
       this.currentDate.getFullYear(),
       this.currentDate.getMonth() - 1,
-      1
+      1,
     );
 
     this.generateCalendar(this.currentDate);
@@ -164,17 +172,23 @@ export class LearningCalendarComponent implements OnInit {
     this.currentDate = new Date(
       this.currentDate.getFullYear(),
       this.currentDate.getMonth() + 1,
-      1
+      1,
     );
 
     this.generateCalendar(this.currentDate);
     this.getChangedMonth.emit(this.currentDate.toISOString());
   }
 
-  selectDay(day: Day): void {
-    this.days.forEach((d) => (d.isSelected = false));
-    day.isSelected = !day.isSelected;
-    this.setSelectedDate(day.date);
+  selectDay(selectedDay: Day): void {
+    this.days = this.days.map((day) => ({
+      ...day,
+      isSelected:
+        day.date.getDate() === selectedDay.date.getDate()
+        && day.date.getMonth() === selectedDay.date.getMonth()
+        && day.date.getFullYear() === selectedDay.date.getFullYear(),
+    }));
+
+    this.setSelectedDate(selectedDay.date);
     this.getSelectedDate.emit(this.selectedDate.toISOString());
   }
 }

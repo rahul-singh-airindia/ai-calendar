@@ -8,18 +8,18 @@
   }"
 >
   <div class="ai-calendar-header">
-    <header-toolbar
+    <app-header-toolbar
       [device]="device"
       [currentDate]="currentDate"
       (previousMonth)="previousMonth()"
       (nextMonth)="nextMonth()"
-    ></header-toolbar>
+    ></app-header-toolbar>
   </div>
 
-  <calendar-grid
+  <app-calendar-grid
     [device]="device"
     [days]="days"
     [currentDate]="currentDate"
     [dateEventMap]="dateEventMap"
-  ></calendar-grid>
+  ></app-calendar-grid>
 </div>

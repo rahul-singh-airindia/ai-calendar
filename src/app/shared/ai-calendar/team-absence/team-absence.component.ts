@@ -3,6 +3,7 @@ import {
   ChangeDetectorRef,
   Component,
   Input,
+  OnChanges,
   OnInit,
   SimpleChanges,
 } from '@angular/core';
@@ -11,48 +12,167 @@ import { ResourceData } from '../interface/team-absence/resource-data.interface'
 import { TeamLeaveHolidayData } from '../interface/team-absence/team-leave-holiday.interface';
 
 @Component({
-  selector: 'team-absence',
+  selector: 'app-calendar-team-absence',
   templateUrl: './team-absence.component.html',
   styleUrls: ['./team-absence.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TeamAbsenceComponent implements OnInit {
-  @Input('font-family')
+export class TeamAbsenceComponent implements OnInit, OnChanges {
+  @Input()
   fontFamily: string = '"Nunito Sans", sans-serif';
-  @Input('width')
+
+  @Input()
   width: string = '100%';
-  @Input('height')
+
+  @Input()
   height: string = '100%';
-  @Input('scale')
+
+  @Input()
   scale: number = 1;
 
-  @Input('resource')
+  @Input()
   resource: ResourceData[] = [];
-  @Input('teamLeavesHoliday')
+
+  @Input()
   teamLeavesHoliday: TeamLeaveHolidayData[] = [];
 
   resourceData: ResourceData[] = [];
+
   teamLeavesHolidayData: TeamLeaveHolidayData[] = [];
 
   currentDate: Date = new Date();
+
   days: Day[] = [];
+
   dateEventMap: Map<string, Map<string, TeamLeaveHolidayData[]>> = new Map();
 
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.resourceData = this.resource;
-    this.teamLeavesHolidayData = this.teamLeavesHoliday;
+    this.teamLeavesHolidayData = this.getLeaveHolidays(this.teamLeavesHoliday);
     this.generateCalendar(this.currentDate);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.resource || changes.teamLeavesHoliday) {
+    if (
+      changes.resource
+      || changes.teamLeavesHoliday
+      || changes.teamLeavesHolidayData
+    ) {
       this.resourceData = changes.resource.currentValue;
-      this.teamLeavesHolidayData = changes.teamLeavesHoliday.currentValue;
+      this.teamLeavesHolidayData = this.getLeaveHolidays(
+        changes.teamLeavesHoliday.currentValue,
+      );
       this.generateCalendar(this.currentDate);
       this.cdr.detectChanges();
     }
+  }
+
+  getLeaveHolidays(
+    leaveHoliday: TeamLeaveHolidayData[],
+  ): TeamLeaveHolidayData[] {
+    const partedEvents: TeamLeaveHolidayData[] = [];
+
+    const formattedEvents = leaveHoliday.filter((event) => {
+      const eventStart = new Date(event.start);
+      const eventEnd = new Date(event.end);
+      const eventDuration = parseInt(event.extendedProps.duration, 10);
+
+      if (eventStart.getDay() + eventDuration > 6) {
+        const newDuration = 6 - eventStart.getDay() + 1;
+
+        const updatedEvent = {
+          ...event,
+          end: new Date(
+            eventStart.getFullYear(),
+            eventStart.getMonth(),
+            eventStart.getDate() + newDuration,
+          )
+            .toISOString()
+            .split('T')[0],
+          extendedProps: {
+            ...event.extendedProps,
+            duration: newDuration.toString(),
+          },
+        };
+
+        partedEvents.push(updatedEvent);
+
+        if (![0, 6].includes(eventEnd.getDay()) && eventEnd.getDay() > 0) {
+          const partedEvent = {
+            ...event,
+            start: new Date(
+              eventStart.getFullYear(),
+              eventStart.getMonth(),
+              eventEnd.getDate() + 1 - (eventDuration - newDuration - 1),
+            )
+              .toISOString()
+              .split('T')[0],
+            extendedProps: {
+              ...event.extendedProps,
+              duration: (eventDuration - newDuration).toString(),
+            },
+          };
+
+          partedEvents.push(partedEvent);
+        }
+
+        return false;
+      }
+
+      return true;
+    });
+
+    const targetEvents = [...formattedEvents, ...partedEvents].map((event) => {
+      const eventName = event.extendedProps.holidayLeaveName.toLowerCase();
+
+      if (
+        ['casual leave', 'privilege leave', 'sick leave'].includes(eventName)
+      ) {
+        const eventStart = new Date(event.start);
+        const eventEnd = new Date(event.end);
+        const eventDuration = parseInt(event.extendedProps.duration, 10);
+
+        if (eventEnd.getDay() === 6) {
+          return {
+            ...event,
+            extendedProps: {
+              ...event.extendedProps,
+              duration: (eventDuration - 1).toString(),
+            },
+          };
+        }
+
+        if (eventStart.getDay() === 0 && eventDuration > 1) {
+          return {
+            ...event,
+            start: new Date(
+              eventStart.getFullYear(),
+              eventStart.getMonth(),
+              eventStart.getDate() + 2,
+            )
+              .toISOString()
+              .split('T')[0],
+            extendedProps: {
+              ...event.extendedProps,
+              duration: (eventDuration - 1).toString(),
+            },
+          };
+        }
+      }
+
+      return event;
+    });
+
+    return targetEvents.filter((event) => {
+      const eventStart = new Date(event.start);
+      const leaveName = event.extendedProps.holidayLeaveName.toLowerCase();
+      return !(
+        [0, 6].includes(eventStart.getDay())
+        && ['casual leave', 'privilege leave', 'sick leave'].includes(leaveName)
+      );
+    });
   }
 
   generateCalendar(date: Date): void {
@@ -61,11 +181,11 @@ export class TeamAbsenceComponent implements OnInit {
     const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
     const pastMonthLastDay = new Date(date.getFullYear(), date.getMonth(), 0);
 
-    for (let i = 0; i < firstDay.getDay(); i++) {
+    for (let i = 0; i < firstDay.getDay(); i += 1) {
       const previousMonthDay = new Date(
         date.getFullYear(),
         date.getMonth() - 1,
-        pastMonthLastDay.getDate() - i
+        pastMonthLastDay.getDate() - i,
       );
 
       this.days.unshift({
@@ -76,7 +196,7 @@ export class TeamAbsenceComponent implements OnInit {
       });
     }
 
-    for (let i = 1; i <= lastDay.getDate(); i++) {
+    for (let i = 1; i <= lastDay.getDate(); i += 1) {
       const currentDay = new Date(date.getFullYear(), date.getMonth(), i);
       const today = new Date();
 
@@ -84,16 +204,16 @@ export class TeamAbsenceComponent implements OnInit {
         date: currentDay,
         events: [],
         isSelected:
-          currentDay.getDate() === today.getDate() &&
-          currentDay.getMonth() === today.getMonth() &&
-          currentDay.getFullYear() === today.getFullYear(),
+          currentDay.getDate() === today.getDate()
+          && currentDay.getMonth() === today.getMonth()
+          && currentDay.getFullYear() === today.getFullYear(),
         isCurrentMonth: true,
       });
     }
 
     const nextMonthFiller = this.days.length;
 
-    for (let i = 1; i <= 48 - nextMonthFiller; i++) {
+    for (let i = 1; i <= 48 - nextMonthFiller; i += 1) {
       const nextMonthDay = new Date(date.getFullYear(), date.getMonth() + 1, i);
 
       this.days.push({
@@ -112,9 +232,9 @@ export class TeamAbsenceComponent implements OnInit {
       const eventStart = new Date(event.start);
 
       return (
-        eventStart.getFullYear() === date.getFullYear() &&
-        eventStart.getMonth() === date.getMonth() &&
-        eventStart.getDate() === date.getDate()
+        eventStart.getFullYear() === date.getFullYear()
+        && eventStart.getMonth() === date.getMonth()
+        && eventStart.getDate() === date.getDate()
       );
     });
   }
@@ -127,8 +247,7 @@ export class TeamAbsenceComponent implements OnInit {
 
       for (const event of targetEvents) {
         for (const resource of event.resourceIds) {
-          const dateMap =
-            this.dateEventMap.get(day.date.toLocaleDateString()) ?? new Map();
+          const dateMap = this.dateEventMap.get(day.date.toLocaleDateString()) ?? new Map();
           const eventsForResource = dateMap.get(resource) ?? [];
           eventsForResource.push(event);
           dateMap.set(resource, eventsForResource);
@@ -142,7 +261,7 @@ export class TeamAbsenceComponent implements OnInit {
     this.currentDate = new Date(
       this.currentDate.getFullYear(),
       this.currentDate.getMonth() - 1,
-      1
+      1,
     );
 
     this.generateCalendar(this.currentDate);
@@ -152,7 +271,7 @@ export class TeamAbsenceComponent implements OnInit {
     this.currentDate = new Date(
       this.currentDate.getFullYear(),
       this.currentDate.getMonth() + 1,
-      1
+      1,
     );
 
     this.generateCalendar(this.currentDate);

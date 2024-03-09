@@ -1,18 +1,18 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component, EventEmitter, Input, Output,
+} from '@angular/core';
 
 @Component({
-  selector: 'header-toolbar',
+  selector: 'app-header-toolbar',
   templateUrl: './header-toolbar.component.html',
   styleUrls: ['./header-toolbar.component.scss'],
 })
-export class HeaderToolbarComponent implements OnInit {
-  @Input('currentDate') currentDate: Date = new Date();
-  @Output('previousMonth') previousMonth = new EventEmitter();
-  @Output('nextMonth') nextMonth = new EventEmitter();
+export class HeaderToolbarComponent {
+  @Input() currentDate: Date = new Date();
 
-  constructor() {}
+  @Output() previousMonth = new EventEmitter();
 
-  ngOnInit(): void {}
+  @Output() nextMonth = new EventEmitter();
 
   handlePreviousMonth() {
     this.previousMonth.emit();

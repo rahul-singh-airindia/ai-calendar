@@ -1,28 +1,28 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { LearningCalendarData } from '../../interface/learning-calendar/learning-calendar.interface';
 
 @Component({
-  selector: 'calendar-cell',
+  selector: 'app-calendar-cell',
   templateUrl: './calendar-cell.component.html',
   styleUrls: ['./calendar-cell.component.scss'],
 })
-export class CalendarCellComponent implements OnInit {
-  @Input('device')
+export class CalendarCellComponent {
+  @Input()
   device = 'desktop';
-  @Input('date')
+
+  @Input()
   date: Date = new Date();
-  @Input('currentDate')
+
+  @Input()
   currentDate: Date = new Date();
-  @Input('dateEventMap')
+
+  @Input()
   dateEventMap: Map<string, LearningCalendarData[]> = new Map();
-  @Input('selected')
+
+  @Input()
   isSelected = false;
 
   isDialogVisible = false;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   toggleDialog() {
     this.isDialogVisible = !this.isDialogVisible;
@@ -32,16 +32,16 @@ export class CalendarCellComponent implements OnInit {
     const today = new Date();
 
     return (
-      date.getDate() === today.getDate() &&
-      date.getMonth() === today.getMonth() &&
-      date.getFullYear() === today.getFullYear()
+      date.getDate() === today.getDate()
+      && date.getMonth() === today.getMonth()
+      && date.getFullYear() === today.getFullYear()
     );
   }
 
   isCurrentMonth(date: Date) {
     return (
-      date.getMonth() === this.currentDate.getMonth() &&
-      date.getFullYear() === this.currentDate.getFullYear()
+      date.getMonth() === this.currentDate.getMonth()
+      && date.getFullYear() === this.currentDate.getFullYear()
     );
   }
 

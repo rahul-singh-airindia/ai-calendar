@@ -9,6 +9,66 @@
     "upcomingHolidayLeavesCalendarView": [
       {
         "title": "Leave",
+        "start": "2024-03-20",
+        "end": "2024-03-26",
+        "extendedProps": {
+          "holidayLeaveName": "Casual Leave",
+          "duration": "7",
+          "status": "PENDING",
+          "month": "Feb",
+          "day": "Tue"
+        }
+      },
+      {
+        "title": "Leave",
+        "start": "2024-03-03",
+        "end": "2024-03-03",
+        "extendedProps": {
+          "holidayLeaveName": "Relocation Leave - Temporary Domestic Relocation",
+          "duration": "2",
+          "status": "PENDING",
+          "month": "Feb",
+          "day": "Fri"
+        }
+      },
+      {
+        "title": "Leave",
+        "start": "2024-02-25",
+        "end": "2024-02-25",
+        "extendedProps": {
+          "holidayLeaveName": "Casual Leave",
+          "duration": "1",
+          "status": "PENDING",
+          "month": "Feb",
+          "day": "Tue"
+        }
+      },
+      {
+        "title": "Leave",
+        "start": "2024-03-10",
+        "end": "2024-03-10",
+        "extendedProps": {
+          "holidayLeaveName": "Privilege Leave",
+          "duration": "1",
+          "status": "PENDING",
+          "month": "Feb",
+          "day": "Tue"
+        }
+      },
+      {
+        "title": "Leave",
+        "start": "2024-03-17",
+        "end": "2024-03-17",
+        "extendedProps": {
+          "holidayLeaveName": "Sick Leave",
+          "duration": "1",
+          "status": "PENDING",
+          "month": "Feb",
+          "day": "Tue"
+        }
+      },
+      {
+        "title": "Leave",
         "start": "2024-02-27",
         "end": "2024-02-27",
         "extendedProps": {

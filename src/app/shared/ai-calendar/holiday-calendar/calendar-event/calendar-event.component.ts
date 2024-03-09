@@ -1,25 +1,25 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { LeaveHolidayData } from '../../interface/holiday-calendar/leave-holiday.interface';
 
 @Component({
-  selector: 'calendar-event',
+  selector: 'app-calendar-event',
   templateUrl: './calendar-event.component.html',
   styleUrls: ['./calendar-event.component.scss'],
 })
-export class CalendarEventComponent implements OnInit {
-  @Input('device')
+export class CalendarEventComponent {
+  @Input()
   device: string = 'desktop';
-  @Input('leaveHolidayData')
+
+  @Input()
+  date: Date = new Date();
+
+  @Input()
   leaveHolidayData: LeaveHolidayData = {} as LeaveHolidayData;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   titleCase(str: string) {
     return str.replace(
       /\b\w/g,
-      (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+      (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(),
     );
   }
 
@@ -45,7 +45,7 @@ export class CalendarEventComponent implements OnInit {
   }
 
   getEventDuration(event: LeaveHolidayData): number {
-    return parseInt(event.extendedProps.duration);
+    return parseInt(event.extendedProps.duration, 10);
   }
 
   px2em(px: number, base: number = 16): number {
@@ -55,6 +55,6 @@ export class CalendarEventComponent implements OnInit {
   getEventTileWidth(event: LeaveHolidayData): string {
     const eventDuration = this.getEventDuration(event);
     const emValue = eventDuration * 100 - 15;
-    return emValue + '%';
+    return `${emValue}%`;
   }
 }

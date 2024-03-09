@@ -1,22 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Day } from '../../interface/day.model';
 import { ResourceData } from '../../interface/team-absence/resource-data.interface';
 import { TeamLeaveHolidayData } from '../../interface/team-absence/team-leave-holiday.interface';
 
 @Component({
-  selector: 'calendar-grid',
+  selector: 'app-calendar-grid',
   templateUrl: './calendar-grid.component.html',
   styleUrls: ['./calendar-grid.component.scss'],
 })
-export class CalendarGridComponent implements OnInit {
+export class CalendarGridComponent {
   @Input()
   days: Day[] = [];
-  @Input('resourceData')
+
+  @Input()
   resourceData: ResourceData[] = [];
-  @Input('dateEventMap')
+
+  @Input()
   dateEventMap: Map<string, Map<string, TeamLeaveHolidayData[]>> = new Map();
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

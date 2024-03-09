@@ -1,25 +1,25 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component, EventEmitter, Input, Output,
+} from '@angular/core';
 import { TeamLeaveHolidayData } from '../../interface/team-absence/team-leave-holiday.interface';
 
 @Component({
-  selector: 'dialog-box',
+  selector: 'app-dialog-box',
   templateUrl: './dialog-box.component.html',
   styleUrls: ['./dialog-box.component.scss'],
 })
-export class DialogBoxComponent implements OnInit {
-  @Input('date')
+export class DialogBoxComponent {
+  @Input()
   date: Date = new Date();
-  @Input('resourceEvents')
+
+  @Input()
   resourceEvents: TeamLeaveHolidayData[] = [];
-  @Input('isDialogVisible')
+
+  @Input()
   isDialogVisible: boolean = false;
 
-  @Output('toggleDialog')
+  @Output()
   toggleDialogHandler = new EventEmitter<void>();
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   toggleDialog() {
     this.toggleDialogHandler.emit();

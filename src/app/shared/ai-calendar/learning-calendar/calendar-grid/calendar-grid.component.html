@@ -1,5 +1,5 @@
 <div class="ai-days">
-  <calendar-cell
+  <app-calendar-cell
     *ngFor="let day of days"
     class="ai-day"
     [ngClass]="{
@@ -10,7 +10,7 @@
     [date]="day.date"
     [currentDate]="currentDate"
     [dateEventMap]="dateEventMap"
-    [selected]="day.isSelected"
+    [isSelected]="day.isSelected"
     (click)="handleSelectDay(day)"
-  ></calendar-cell>
+  ></app-calendar-cell>
 </div>

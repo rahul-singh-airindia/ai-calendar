@@ -14,9 +14,12 @@
     display: flex;
     align-items: center;
     gap: styles.px2em(20px);
+    flex-direction: row-reverse;
 
     .ai-btn {
-      padding: styles.$padding-sm;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
       border: none;
       font-weight: bold;

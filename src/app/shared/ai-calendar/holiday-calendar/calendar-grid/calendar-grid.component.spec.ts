@@ -8,9 +8,9 @@ describe('CalendarGridComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CalendarGridComponent ]
+      declarations: [CalendarGridComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

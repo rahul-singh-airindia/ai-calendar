@@ -1,14 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'week-header',
+  selector: 'app-week-header',
   templateUrl: './week-header.component.html',
   styleUrls: ['./week-header.component.scss'],
 })
-export class WeekHeaderComponent implements OnInit {
+export class WeekHeaderComponent {
   weekDays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

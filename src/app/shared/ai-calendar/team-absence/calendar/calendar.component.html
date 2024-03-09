@@ -1,9 +1,9 @@
 <div class="ai-calendar-grid">
-  <calendar-month-header [days]="days"></calendar-month-header>
+  <app-calendar-month-header [days]="days"></app-calendar-month-header>
 
-  <calendar-grid
+  <app-calendar-grid
     [days]="getDaysInCurrentMonth()"
     [resourceData]="resourceData"
     [dateEventMap]="dateEventMap"
-  ></calendar-grid>
+  ></app-calendar-grid>
 </div>

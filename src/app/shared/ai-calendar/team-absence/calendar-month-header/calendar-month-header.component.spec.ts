@@ -8,9 +8,9 @@ describe('CalendarMonthHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CalendarMonthHeaderComponent ]
+      declarations: [CalendarMonthHeaderComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

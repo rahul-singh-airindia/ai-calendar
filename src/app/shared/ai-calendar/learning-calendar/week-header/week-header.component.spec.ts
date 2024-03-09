@@ -8,9 +8,9 @@ describe('WeekHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WeekHeaderComponent ]
+      declarations: [WeekHeaderComponent],
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

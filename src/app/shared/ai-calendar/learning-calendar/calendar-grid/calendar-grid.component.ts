@@ -1,31 +1,31 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component, EventEmitter, Input, Output,
+} from '@angular/core';
 import { Day } from '../../interface/day.model';
 import { LearningCalendarData } from '../../interface/learning-calendar/learning-calendar.interface';
 
 @Component({
-  selector: 'calendar-grid',
+  selector: 'app-calendar-grid',
   templateUrl: './calendar-grid.component.html',
   styleUrls: ['./calendar-grid.component.scss'],
 })
-export class CalendarGridComponent implements OnInit {
-  @Input('days')
+export class CalendarGridComponent {
+  @Input()
   days: Day[] = [];
-  @Input('currentDate')
+
+  @Input()
   currentDate: Date = new Date();
-  @Input('dateEventMap')
+
+  @Input()
   dateEventMap: Map<string, LearningCalendarData[]> = new Map();
 
-  @Output('selectDay')
+  @Output()
   selectDay = new EventEmitter<Day>();
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   isCurrentMonth(date: Date) {
     return (
-      date.getMonth() === this.currentDate.getMonth() &&
-      date.getFullYear() === this.currentDate.getFullYear()
+      date.getMonth() === this.currentDate.getMonth()
+      && date.getFullYear() === this.currentDate.getFullYear()
     );
   }
 

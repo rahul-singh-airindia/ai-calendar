@@ -1,10 +1,10 @@
 <div class="ai-row" *ngFor="let resource of resourceData">
-  <calendar-cell
+  <app-calendar-cell
     class="ai-cell"
     *ngFor="let day of days"
     [ngClass]="{ 'ai-faded': [0, 6].includes(day.date.getDay()) }"
     [date]="day.date"
     [resource]="resource"
     [dateEventMap]="dateEventMap"
-  ></calendar-cell>
+  ></app-calendar-cell>
 </div>

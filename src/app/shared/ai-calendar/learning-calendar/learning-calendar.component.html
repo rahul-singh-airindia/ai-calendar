@@ -8,20 +8,20 @@
     }"
   >
     <div class="ai-calendar-header">
-      <header-toolbar
+      <app-header-toolbar
         [currentDate]="currentDate"
         (previousMonth)="previousMonth()"
         (nextMonth)="nextMonth()"
-      ></header-toolbar>
+      ></app-header-toolbar>
 
-      <week-header></week-header>
+      <app-week-header></app-week-header>
     </div>
 
-    <calendar-grid
+    <app-calendar-grid
       [days]="days"
       [currentDate]="currentDate"
       [dateEventMap]="dateEventMap"
       (selectDay)="selectDay($event)"
-    ></calendar-grid>
+    ></app-calendar-grid>
   </div>
 </div>
